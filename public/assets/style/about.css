@@ -1,0 +1,296 @@
+/* ==================================================
+   ABOUT
+================================================== */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    gap: 80px;
+
+    width: min(82%, 1280px);
+
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+.about-image {
+    position: relative;
+
+    min-height: 570px;
+
+    overflow: hidden;
+
+    border-radius: 35px;
+
+    background: #f1eee7;
+
+    box-shadow: 0 15px 45px rgba(7, 25, 92, 0.1);
+}
+
+.about-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 570px;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.03);
+}
+
+/* ==================================================
+   IMAGE BADGE
+================================================== */
+
+.about-image-badge {
+    position: absolute;
+
+    right: 25px;
+    bottom: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 120px;
+    height: 120px;
+
+    padding: 15px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #07195c;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(7, 25, 92, 0.15);
+}
+
+.about-image-badge span {
+    margin-bottom: 2px;
+
+    color: #ff7771;
+
+    font-size: 17px;
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.about-image-badge strong {
+    color: #07195c;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.about-content {
+    max-width: 580px;
+}
+
+.about-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: #d5a83d;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.about-content h2 {
+    margin: 0 0 25px;
+
+    color: #07195c;
+
+    font-size: clamp(38px, 4vw, 54px);
+
+    line-height: 1.03;
+
+    font-weight: 800;
+
+    letter-spacing: -1.8px;
+}
+
+/* ==================================================
+   TEXT
+================================================== */
+
+.about-content p {
+    margin: 0 0 16px;
+
+    color: #4b5675;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+.about-content .about-lead {
+    margin-bottom: 20px;
+
+    color: #07195c;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    font-weight: 500;
+}
+
+/* ==================================================
+   BUTTON
+================================================== */
+
+.about-button {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 12px;
+    padding: 14px 23px;
+
+    border-radius: 28px;
+
+    background: #07195c;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        gap 0.2s ease;
+}
+
+.about-button span {
+    color: #ff7771;
+
+    font-size: 18px;
+    line-height: 1;
+
+    transition: transform 0.2s ease;
+}
+
+.about-button:hover {
+    background: #0c267c;
+
+    transform: translateY(-2px);
+
+    gap: 12px;
+}
+
+.about-button:hover span {
+    transform: translateX(3px);
+}
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 950px) {
+    .about {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        width: 90%;
+
+        padding: 80px 0;
+    }
+
+    .about-image {
+        min-height: 500px;
+
+        max-width: 650px;
+    }
+
+    .about-image img {
+        min-height: 500px;
+    }
+
+    .about-content {
+        max-width: 700px;
+    }
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+    .about {
+        width: 90%;
+
+        gap: 35px;
+
+        padding: 60px 0 70px;
+    }
+
+    .about-image {
+        min-height: 420px;
+
+        border-radius: 25px;
+    }
+
+    .about-image img {
+        min-height: 420px;
+    }
+
+    .about-image-badge {
+        right: 15px;
+        bottom: 15px;
+
+        width: 95px;
+        height: 95px;
+    }
+
+    .about-image-badge span {
+        font-size: 14px;
+    }
+
+    .about-image-badge strong {
+        font-size: 12px;
+    }
+
+    .about-content h2 {
+        font-size: 38px;
+    }
+
+    .about-content .about-lead {
+        font-size: 16px;
+    }
+
+    .about-content p {
+        font-size: 15px;
+
+        line-height: 1.65;
+    }
+}

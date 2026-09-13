@@ -1,0 +1,18 @@
+<div
+    class="decorative-balloon decorative-balloon--{{ position|default('right') }}"
+    style="
+        {% if top is defined %}
+            top: {{ top }};
+        {% endif %}
+
+        {% if size is defined %}
+            width: {{ size }};
+        {% endif %}
+    "
+    aria-hidden="true"
+>
+    <img
+        src="https://pngimg.com/uploads/balloon/balloon_PNG579.png"
+        alt=""
+    >
+</div>

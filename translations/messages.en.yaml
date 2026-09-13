@@ -1,4 +1,55 @@
 nav:
-    home: Home
-    gallery: Gallery
-    contact: Contact
+    home: "Home"
+    gallery: "Gallery"
+    about_us: "About Us"
+    contact: "Contact"
+    book_now: "Book Now"
+    alt_logo: "Ania Balloon - Balloon Decorations Chicago"
+    services: "Services"
+hero:
+    title: "Balloon Decorations <br/> for Every Occasion<br/> in Chicago and surrounding areas"
+    subtitle: "We create unique balloon decorations for birthdays, parties, baby showers, weddings, and special events in Chicago and the surrounding areas."
+    button_text: "Book Now"
+services:
+    whatWeDo: "What We Do"
+    title: "Our Services"
+    description: "We create unique balloon decorations tailored to the occasion, venue, and style of your event. We serve the Chicago metropolitan area and its surroundings."
+    garlandsAndBackdrops: "Balloon Garlands and Backdrops"
+    garlandsAndBackdropsAlt: "Balloon garland and backdrop for an event"
+    garlandsAndBackdropsDescription: "Impressive balloon garlands, arches, and backdrops created for birthdays, baby showers, weddings, parties, and other special occasions."
+    learnMore: "Learn More"
+    animalBalloons: "Animal Balloons"
+    animalBalloonsAlt: "Animal-shaped balloon decorations for children's parties"
+    animalBalloonsDescription: "Colorful balloon animals and shapes that add a special touch to children's parties and bring plenty of joy to the little ones."
+    eventDecorationsAlt: "Balloon decoration for events and parties"
+    eventDecorations: "Event Decorations"
+    eventDecorationsDescription: "We create balloon decorations for events, corporate parties, birthdays, grand openings, and other occasions requiring a special setting."
+about:
+    getToKnowUs: "Get to know us"
+    title: "Decorations created with love and passion"
+    description1: "Ania Balloons is more than just balloon decorations. It is a way to create a unique atmosphere and give every event an individual touch."
+    description2: "We create decorations for birthdays, baby showers, family gatherings, weddings, children's parties, and corporate events. From striking garlands and balloon backdrops to colorful balloon animals and figures, we tailor every design to the occasion, the venue, and our client's vision."
+    description3: "We operate in Chicago and the surrounding suburbs, including Naperville and Wheaton. Our goal is to make the entire process simple and enjoyable—from the initial contact to the final setup of the decorations for your event."
+learnMore: "Learn More"
+serviceArea:
+    whereWeWork: "Where We Work"
+    title: "Balloon decorations in Chicago and the surrounding area"
+    description1: "Ania Balloons creates balloon decorations and attractions for birthdays, parties, baby showers, weddings, and events in Chicago and the surrounding suburbs."
+    description2: "We serve Chicago, Naperville, Wheaton, and surrounding communities in the Chicago metropolitan area, among others."
+    mapLabel: "Chicago Metropolitan Area"
+    haveQuestions: "Have questions?"
+    talkToUs: "Let's talk about your decoration."
+    contactDescription: "Are you planning a birthday, a party, or a special event? Contact Ania and tell us about your event. We would be happy to create decorations tailored to your occasion."
+    contactWith: "Contact with"
+    requestQuote: "Request a quote"
+footer:
+    description: "We create unique balloon decorations for birthdays, parties, baby showers, weddings, and events in Chicago and the surrounding suburbs."
+    requestQuote: "Request a quote"
+    navigation: "Navigation"
+    contact: "Contact"
+    callMe: "Call me"
+    serviceArea: "Service area"
+    serviceAreaDescription: "Chicago & surrounding suburbs"
+    allRightsReserved: "All rights reserved"
+main:
+    contact: "Contact"

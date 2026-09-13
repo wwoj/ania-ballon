@@ -1,0 +1,111 @@
+/* ==================================================
+   DECORATIVE BALLOON
+================================================== */
+
+.decorative-balloon {
+    position: absolute;
+
+    z-index: 0;
+
+    width: 120px;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    line-height: 0;
+}
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+.decorative-balloon img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+/* ==================================================
+   RIGHT
+================================================== */
+
+.decorative-balloon--right {
+    right: -45px;
+
+    transform: rotate(10deg);
+}
+
+/* ==================================================
+   LEFT
+================================================== */
+
+.decorative-balloon--left {
+    left: -45px;
+
+    transform: rotate(-10deg);
+}
+
+/* ==================================================
+   CONTENT ABOVE BALLOON
+================================================== */
+
+.section-with-balloon > *:not(.decorative-balloon) {
+    position: relative;
+
+    z-index: 1;
+}
+
+.section-with-balloon {
+    overflow: hidden;
+}
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 1100px) {
+    .decorative-balloon {
+        width: 100px;
+    }
+
+    .decorative-balloon--right {
+        right: -35px;
+    }
+
+    .decorative-balloon--left {
+        left: -35px;
+    }
+}
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 768px) {
+    .decorative-balloon {
+        width: 75px;
+    }
+
+    .decorative-balloon--right {
+        right: -25px;
+    }
+
+    .decorative-balloon--left {
+        left: -25px;
+    }
+}
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media (max-width: 500px) {
+    .decorative-balloon {
+        display: none;
+    }
+}

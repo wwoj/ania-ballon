@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Najpiękniejsze Dekoracje Balonowe w Chicago | Ania Balloon{% endblock %}
+
+{% block body %}
+    {% include 'home/_hero.html.twig' %}
+    {% include 'partials/_balloons.html.twig' with {
+        position: 'right'
+    } %}
+    {% include 'home/_services.html.twig' %}
+    {% include 'partials/_balloons.html.twig' with {
+        position: 'left'
+    } %}
+    {% include 'home/_about.html.twig' %}
+    {% include 'partials/_balloons.html.twig' with {
+        position: 'right'
+    } %}
+    {% include 'home/_service-area.html.twig' %}
+    {% include 'partials/_balloons.html.twig' with {
+        position: 'left'
+    } %}
+
+{% endblock %}

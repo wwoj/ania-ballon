@@ -1,0 +1,60 @@
+{% set current_route = app.request.attributes.get('_route') %}
+{% set current_params = app.request.attributes.get('_route_params') %}
+
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        {# LOGO #}
+        <a href="#" class="logo" aria-label="Ania Balloons - strona główna">
+            Ania Balloon
+        </a>
+
+
+        {# GŁÓWNA NAWIGACJA #}
+        <nav class="main-nav" aria-label="Główna nawigacja">
+
+            <a href="{{ path('home') }}" class="nav-link active">
+                {{ 'nav.home'|trans }}
+            </a>
+
+            <a href="{{ path('app_services') }}" class="nav-link">
+                {{ 'nav.services'|trans }}
+            </a>
+
+            <a href="#" class="nav-link">
+                {{ 'nav.gallery'|trans }}
+            </a>
+
+            <a href="#" class="nav-link">
+                {{ 'nav.about_us'|trans }}
+            </a>
+
+            <a href="{{ path('contact') }}" class="nav-link">
+                {{ 'nav.contact'|trans }}
+            </a>
+
+        </nav>
+
+
+        {# JĘZYK - NA RAZIE TYLKO INFORMACYJNIE #}
+        <div class="language-switcher">
+    {% if app.request.locale == 'en' %}
+        <span class="active">🇺🇸EN</span>|
+        <a href="{{ path(current_route, current_params|merge({'_locale': 'pl'})) }}"> 
+        🇵🇱
+        PL
+        </a>
+    {% else %}
+        <a href="{{ path(current_route, current_params|merge({'_locale': 'en'})) }}">🇺🇸EN</a>|
+        <span class="active">🇵🇱PL
+        </span>
+    {% endif %}
+</div>
+        
+
+    </div>
+    
+
+</header>

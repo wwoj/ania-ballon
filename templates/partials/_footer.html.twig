@@ -1,0 +1,187 @@
+<footer class="site-footer">
+
+    <div class="footer-top">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="#" class="footer-logo">
+                    <span class="footer-logo-main">Ania</span>
+                    <span class="footer-logo-sub">Balloons</span>
+                </a>
+
+                <p class="footer-description">
+                {{ 'footer.description'|trans }}
+                </p>
+
+                <a href="#" class="footer-main-button">
+                    {{ 'footer.requestQuote'|trans }}
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+            {# ==================================================
+               NAVIGATION
+            ================================================== #}
+
+            <div class="footer-column">
+
+                <h3>
+                    {{ 'footer.navigation'|trans }}
+                </h3>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#">
+                            {{ 'nav.home'|trans }}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            {{ 'nav.services'|trans }}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            {{ 'nav.about_us'|trans }}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            {{ 'nav.gallery'|trans }}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            {{ 'nav.contact'|trans }}
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            {# ==================================================
+               SERVICES
+            ================================================== #}
+
+            <div class="footer-column">
+
+                <h3>
+                    {{ 'footer.services'|trans }}
+                </h3>
+
+                <ul class="footer-links">
+                    <li>
+                        <a href="#">
+                        {{ 'services.garlandsAndBackdrops'|trans }}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            {{ 'services.animalBalloons'|trans }}
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            {{ 'services.eventDecorations'|trans }}
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            {# ==================================================
+               CONTACT
+            ================================================== #}
+
+            <div class="footer-column footer-contact">
+
+                <h3>
+                    {{ 'footer.contact'|trans }}
+                </h3>
+
+                <div class="footer-contact-item">
+
+                    <span class="footer-contact-label">
+                        {{ 'footer.callMe'|trans }}
+                    </span>
+
+                    <a
+                        href="tel:+1XXXXXXXXXX"
+                        class="footer-contact-value footer-phone"
+                    >
+                        +1 XXX XXX XXXX
+                    </a>
+
+                </div>
+
+                <div class="footer-contact-item">
+
+                    <span class="footer-contact-label">
+                        {{ 'footer.serviceArea'|trans }}
+                    </span>
+
+                    <p class="footer-location">
+                        {{ 'footer.serviceAreaDescription'|trans }}
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    {# ==================================================
+       FOOTER BOTTOM
+    ================================================== #}
+
+    <div class="footer-bottom">
+
+        <div class="footer-bottom-container">
+
+            <div class="footer-copyright">
+
+                <span>
+                    © {{ "now"|date("Y") }} Ania Balloons
+                </span>
+
+                <span class="footer-dot">
+                    •
+                </span>
+
+                <span>
+                    {{ 'footer.allRightsReserved'|trans }}
+                </span>
+
+            </div>
+
+
+            <div class="footer-legal">
+                {# <a href="#">
+                    Privacy Policy
+                </a> #}
+                {# <a href="#">
+                    Cookies
+                </a> #}
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>

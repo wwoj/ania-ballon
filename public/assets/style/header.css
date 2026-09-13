@@ -1,0 +1,153 @@
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+    position: fixed;
+
+    top: 18px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(82%, 1280px);
+
+    z-index: 1000;
+}
+
+.header-inner {
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
+
+    border-radius: 35px;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow: 0 8px 30px rgba(20, 35, 80, 0.08);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    color: #07195c;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    margin: 0 auto;
+}
+
+.nav-link {
+    position: relative;
+
+    padding: 20px 0;
+
+    color: #07195c;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #ef6d69;
+}
+
+/* ACTIVE LINK */
+
+.nav-link.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 10px;
+
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: #ef6d69;
+}
+
+/* =========================================
+   LANGUAGE SWITCHER
+========================================= */
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #07195c;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.language-flag {
+    font-size: 19px;
+}
+
+.language-divider {
+    opacity: 0.5;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+    .site-header {
+        width: 94%;
+    }
+
+    .header-inner {
+        padding: 0 15px;
+    }
+
+    .main-nav {
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-nav {
+        display: none;
+    }
+
+    .header-inner {
+        justify-content: space-between;
+    }
+}

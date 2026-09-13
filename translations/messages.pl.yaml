@@ -1,4 +1,61 @@
 nav:
-    home: Strona główna
-    gallery: Galeria
-    contact: Kontakt
+    home: "Strona główna"
+    gallery: "Galeria"
+    about_us: "O nas"
+    contact: "Kontakt"
+    book_now: "Zarezerwuj"
+    alt_logo: "Ania Balloons - Dekoracje balonowe Chicago"
+    services: "Usługi"
+
+hero:
+    title: "Dekoracje balonowe <br/> na każdą okazję<br/> w Chicago i okolicach"
+    subtitle: "Tworzymy wyjątkowe dekoracje balonowe na urodziny, przyjęcia, baby shower, wesela i inne wyjątkowe wydarzenia w Chicago i okolicach."
+    button_text: "Zarezerwuj termin"
+
+services:
+    whatWeDo: "Co oferujemy"
+    title: "Nasze usługi"
+    description: "Tworzymy wyjątkowe dekoracje balonowe dopasowane do okazji, miejsca i charakteru Twojego wydarzenia. Oferujemy dekoracje balonowe w Chicago i okolicznych miejscowościach."
+    garlandsAndBackdrops: "Girlandy balonowe i dekoracje ścianek"
+    garlandsAndBackdropsAlt: "Efektowna girlanda balonowa i dekoracja ścianki na przyjęcie"
+    garlandsAndBackdropsDescription: "Tworzymy efektowne girlandy balonowe, łuki oraz dekoracje ścianek na urodziny, baby shower, wesela, przyjęcia i inne wyjątkowe okazje."
+    learnMore: "Dowiedz się więcej"
+    animalBalloons: "Balonowe zwierzątka i figury"
+    animalBalloonsAlt: "Kolorowe zwierzątka z balonów na przyjęcie dla dzieci"
+    animalBalloonsDescription: "Kolorowe zwierzątka i figury z balonów, które dodają wyjątkowego charakteru dziecięcym przyjęciom i zapewniają najmłodszym mnóstwo radości."
+    eventDecorationsAlt: "Dekoracje balonowe na imprezy i wydarzenia"
+    eventDecorations: "Dekoracje na wydarzenia"
+    eventDecorationsDescription: "Tworzymy dekoracje balonowe na różnego rodzaju wydarzenia, imprezy firmowe, urodziny, otwarcia lokali oraz inne okazje wymagające wyjątkowej oprawy."
+
+about:
+    getToKnowUs: "Poznaj nas"
+    title: "Dekoracje tworzone z pasją i miłością"
+    description1: "Ania Balloons to coś więcej niż dekoracje balonowe. To sposób na stworzenie wyjątkowej atmosfery i nadanie każdemu wydarzeniu indywidualnego charakteru."
+    description2: "Tworzymy dekoracje na urodziny, baby shower, rodzinne spotkania, wesela, przyjęcia dla dzieci oraz imprezy firmowe. Od efektownych girland i ścianek balonowych po kolorowe zwierzątka i figury z balonów – każdą realizację dopasowujemy do okazji, miejsca oraz wizji naszego klienta."
+    description3: "Działamy w Chicago i okolicznych miejscowościach, w tym w Naperville i Wheaton. Zależy nam, aby cały proces był prosty i przyjemny – od pierwszego kontaktu aż po przygotowanie dekoracji na Twoje wydarzenie."
+    learnMore: "Dowiedz się więcej"
+
+serviceArea:
+    whereWeWork: "Gdzie działamy"
+    title: "Dekoracje balonowe w Chicago i okolicach"
+    description1: "Ania Balloons tworzy dekoracje balonowe oraz atrakcje na urodziny, przyjęcia, baby shower, wesela i inne wydarzenia w Chicago oraz okolicznych miejscowościach."
+    description2: "Obsługujemy Chicago, Naperville, Wheaton oraz okoliczne miejscowości w obszarze metropolitalnym Chicago."
+    mapLabel: "Obszar metropolitalny Chicago"
+    haveQuestions: "Masz pytania?"
+    talkToUs: "Porozmawiajmy o Twojej dekoracji"
+    contactDescription: "Planujesz urodziny, przyjęcie lub wyjątkowe wydarzenie? Skontaktuj się z Anią i opowiedz nam o swojej uroczystości. Z przyjemnością przygotujemy dekoracje dopasowane do okazji, miejsca i Twojej wizji."
+    contactWith: "Skontaktuj się z nami"
+    requestQuote: "Poproś o wycenę"
+
+footer:
+    description: "Tworzymy wyjątkowe dekoracje balonowe na urodziny, przyjęcia, baby shower, wesela i inne wydarzenia w Chicago oraz okolicznych miejscowościach."
+    requestQuote: "Poproś o wycenę"
+    navigation: "Nawigacja"
+    contact: "Kontakt"
+    callMe: "Zadzwoń do mnie"
+    serviceArea: "Obszar działania"
+    serviceAreaDescription: "Chicago i okoliczne miejscowości"
+    allRightsReserved: "Wszelkie prawa zastrzeżone"
+
+main:
+contact: "Kontakt"
