@@ -1,0 +1,11 @@
+database:
+    image: mysql:8.4
+    environment:
+        MYSQL_DATABASE: ania_balloon
+        MYSQL_USER: ania
+        MYSQL_PASSWORD: ania_password
+        MYSQL_ROOT_PASSWORD: root_password
+    ports:
+        - "3307:3306"
+    volumes:
+        - ania_balloon_mysql:/var/lib/mysql
