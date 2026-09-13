@@ -35,7 +35,11 @@
                         </div>
                     {% endif %}
 
-                    <form method="post">
+                    <form
+                        id="registrationForm"
+                        method="post"
+                        action="{{ path('admin_register') }}"
+                    >
 
                         <div class="mb-3">
                             <label for="email" class="form-label">
@@ -111,7 +115,7 @@
                             Already have an account?
                         </span>
 
-                        <a href="#" class="text-decoration-none">
+                        <a href="{{ path('admin_login') }}" class="text-decoration-none">
                             Log in
                         </a>
                     </div>
@@ -122,4 +126,9 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('assets/js/registration.js') }}"></script>
 {% endblock %}

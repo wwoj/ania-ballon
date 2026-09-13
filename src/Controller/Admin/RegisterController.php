@@ -2,10 +2,14 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Routing\Attribute\Route;
+use App\Repository\UserRepository;
 
 final class RegisterController extends AbstractController
 {
@@ -19,13 +23,25 @@ final class RegisterController extends AbstractController
 
     #[Route('/admin/registers', name: 'admin_register', methods: ['POST'])]
     public function register(
-        UserPasswordHasherInterface $passwordHasher
-    ): Response {
-        // Implement your registration logic here
+        Request $request,
+        UserPasswordHasherInterface $passwordHasher,
+        UserRepository $userRepository,
+    ): JsonResponse {
+        $user = new User();
 
-        dd('Registration logic not implemented yet.');
-        return $this->render('admin/register/register.html.twig', [
-            'controller_name' => 'RegisterController',
+        $hashedPassword = $passwordHasher->hashPassword(
+            $user,
+            $request->request->getString('password')
+        );
+
+        $user->setPassword($hashedPassword);
+        $user->setEmail($request->request->getString('email'));
+
+        $userRepository->save($user, true);
+
+        return $this->json([
+            'success' => true,
+            'hash_created' => $hashedPassword !== '',
         ]);
     }
 }
