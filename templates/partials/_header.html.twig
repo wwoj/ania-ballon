@@ -15,7 +15,7 @@
         {# GŁÓWNA NAWIGACJA #}
         <nav class="main-nav" aria-label="Główna nawigacja">
 
-            <a href="{{ path('home') }}" class="nav-link active">
+            <a href="{{ path('home') }}" class="nav-link {{ current_route == 'home' ? 'active' : '' }}">
                 {{ 'nav.home'|trans }}
             </a>
 
@@ -31,7 +31,7 @@
                 {{ 'nav.about_us'|trans }}
             </a>
 
-            <a href="{{ path('contact') }}" class="nav-link">
+            <a href="{{ path('contact') }}" class="nav-link {{ current_route == 'contact' ? 'active' : '' }}">
                 {{ 'nav.contact'|trans }}
             </a>
 
