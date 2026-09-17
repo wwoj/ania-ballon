@@ -53,7 +53,7 @@ final class LoginController extends AbstractController
 
         return $this->json([
             'success' => true,
-            'redirect' => $this->generateUrl('home'),
+            'redirect' => $this->generateUrl('admin_dashboard'),
         ]);
     }
 }

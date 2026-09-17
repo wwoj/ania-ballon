@@ -1,20 +1,132 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Kontakt | Zamów Ścianki i Dekoracje Balonowe w Chicago{% endblock %}
+{% block meta_description %}Zadzwoń do nas i zamów bajkowe dekoracje balonowe na komunię, chrzest, urodziny i baby shower! Obsługujemy Chicago, Wheaton, hrabstwo DuPage i okolice.{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/contact_page.css') }}">
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{# 1. Hero Sekcji Kontakt #}
+<section class="contact-hero">
+    <div class="container">
+        <span class="candy-badge">🎈 Zadzwon i Zarezerwuj Termin!</span>
+        <h1>Stwórzmy Razem Magiczny Świat Balonów!</h1>
+        <p>Tworzymy kolorowe, cukierkowe i niezapomniane oprawy balonowe na urodziny, chrzest, komunię, baby shower oraz eventy w całej metropolii Chicago!</p>
+    </div>
+</section>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Users/wojciki/Desktop/Project/Symfony/ania-balloon/src/Controller/ContactController.php</code></li>
-        <li>Your template at <code>/Users/wojciki/Desktop/Project/Symfony/ania-balloon/templates/contact/index.html.twig</code></li>
-    </ul>
+<div class="container contact-main-layout">
+
+    {# 2. Sekcja Główna - Zamówienie Telefoniczne ze Zdjęciem #}
+    <section class="contact-call-card">
+
+        {# Przykładowe zdjęcie balonów z Unsplash #}
+        <div class="contact-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1000&q=80" alt="Kolorowe dekoracje i ścianki balonowe Chicago">
+        </div>
+
+        <h2>Zadzwoń do Nas Bezpośrednio!</h2>
+        <p class="call-lead">Najszybszy sposób na wycenę i rezerwację terminu – omówmy szczegóły Twojego wydarzenia przez telefon lub SMS.</p>
+
+        <div class="phone-action-box">
+            <a href="tel:+13120000000" class="btn-candy-call">
+                <span class="btn-icon">📲</span>
+                <span class="btn-text">
+                    <small>Kliknij i zadzwoń teraz</small>
+                    <strong>(312) 000-0000</strong>
+                </span>
+            </a>
+            <a href="sms:+13120000000" class="btn-candy-sms">💬 Wyślij SMS z zapytaniem</a>
+        </div>
+
+        <div class="working-hours-badge">
+            ✨ Jesteśmy dostępni telefonicznie: Pon - Sob (8:00 - 20:00)
+        </div>
+    </section>
+
+    {# 3. Sekcja SEO Obszaru Działania (Sidebar) #}
+    <aside class="contact-seo-info">
+
+        <div class="seo-card">
+            <h3>📍 Gdzie Dojeżdżamy?</h3>
+            <p>Dostarczamy i montujemy ścianki balonowe oraz girlandy na terenie <strong>całego Chicago i okolicznych miasteczek</strong>!</p>
+
+            <h4>Obsługiwane Rejony & Hrabstwa:</h4>
+            <ul class="cities-list">
+                <li><strong>Chicago</strong> (wszystkie dzielnice)</li>
+                <li><strong>Wheaton</strong> (DuPage District)</li>
+                <li>Naperville & Aurora</li>
+                <li>Schaumburg & Elk Grove Village</li>
+                <li>Oak Brook & Hinsdale</li>
+                <li>Des Plaines & Park Ridge</li>
+                <li>Hrabstwo DuPage (DuPage County)</li>
+                <li>Hrabstwo Cook (Cook County)</li>
+            </ul>
+
+            <div class="notice-box-candy">
+                <p>🍬 <strong>Nie widzisz swojego miasta?</strong> Bez obaw! Dojeżdżamy też do sąsiednich miasteczek. Zadzwoń i zapytaj o dojazd!</p>
+            </div>
+        </div>
+
+        <div class="seo-card">
+            <h3>🎈 Dekoracje na Każdą Okazję</h3>
+            <p>Specjalizujemy się w bajkowych kompozycjach dopasowanych do Twojej uroczystości:</p>
+            <ul class="services-seo-list">
+                <li>🎂 <strong>Urodziny i Jubileusze</strong> (Kolorowe girlandy organowe, cyfry)</li>
+                <li>🕊️ <strong>Chrzest Święty & Komunia</strong> (Pastelowe, eleganckie ścianki)</li>
+                <li>👶 <strong>Baby Shower & Gender Reveal</strong> (Cukierkowe dekoracje)</li>
+                <li>✨ <strong>Foto-ścianki i Łuki</strong> (Idealne tło do pamiątkowych zdjęć)</li>
+            </ul>
+        </div>
+
+    </aside>
+
 </div>
+
+{# 4. Sekcja FAQ #}
+<section class="contact-faq-section container">
+    <h2>Często Zadawane Pytania (FAQ)</h2>
+    <div class="faq-grid">
+        <div class="faq-item">
+            <h3>Z jakim wyprzedzeniem najlepiej zadzwonić?</h3>
+            <p>Zalecamy kontakt telefoniczny z minimum 2-3 tygodniowym wyprzedzeniem, szczególnie na sezony komunijne i letnie przyjęcia w okolicach Chicago i Wheaton.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Czy montujecie dekoracje na miejscu?</h3>
+            <p>Tak! Przyjeżdżamy na miejsce wydarzenia, montujemy pełną kompozycję balonową, a po imprezie możemy zająć się jej demontażem.</p>
+        </div>
+    </div>
+</section>
+
+{# 5. Struktura Schema.org (JSON-LD) #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Ania Balloon",
+  "image": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1000&q=80",
+  "telephone": "+13120000000",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Chicago",
+    "addressRegion": "IL",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Chicago",
+    "Wheaton",
+    "DuPage County",
+    "Cook County",
+    "Naperville",
+    "Schaumburg"
+  ],
+  "description": "Bajkowe dekoracje i ścianki balonowe na chrzest, komunię, urodziny i baby shower w Chicago, Wheaton i metropolii Chicagoland. Zamówienia telefoniczne."
+}
+</script>
+
 {% endblock %}
