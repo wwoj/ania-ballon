@@ -66,23 +66,26 @@
             this.value = '';
         });
 
-        $(document).on('click', 'submitUpload', function () {
+        $(document).on('click', '#submitUpload', async function () {
             const formData = new FormData();
             selectedFiles.forEach((file) => {
                 formData.append('images[]', file);
             });
 
+console.log(selectedFiles)
             try {
-                const response = await fetch('/upload/images', {
+                const response = await fetch('/admin/upload', {
                     method: 'POST',
                     body: formData
                 });
+
+                const data = await response.json();
 
                 if (!response.ok) {
                     throw new Error('Upload failed');
                 }
 
-                const data = await response.json();
+                //const data = await response.json();
 
                 console.log(data);
 
@@ -93,14 +96,6 @@
                 // clear input
                 isUploading = false;
             }
-            // I have already upload list :)
-            assign it to new Form data
-            create post fetch!
-            //prevend double click
-            // wait for response 
-            // reload list with order 
-
-            
         })
 
         $(document).on('click', '.file-item__remove-btn', function () {
