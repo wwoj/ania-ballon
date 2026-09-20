@@ -1,0 +1,37 @@
+<header class="admin-topbar">
+    <div class="admin-topbar__left">
+        <button type="button" class="admin-topbar__toggle" id="sidebarToggle" aria-label="Toggle Sidebar">
+            ☰
+        </button>
+        <span class="admin-topbar__title">Panel Zarządzania</span>
+    </div>
+
+    <div class="admin-topbar__right">
+        <a href="{{ path('home') }}" class="admin-topbar__btn admin-topbar__btn--outline">
+            🌐 Zobacz stronę
+        </a>
+
+        {# Sekcja Użytkownika #}
+        <div class="admin-topbar__user">
+            {% if app.user %}
+                {# Pobieramy pierwszą literę z identyfikatora / imienia #}
+                {% set user_name = app.user.userIdentifier %}
+                {% set first_letter = user_name|first|upper %}
+
+                <div class="admin-topbar__avatar">
+                    {{ first_letter }}
+                </div>
+                <span class="admin-topbar__username">
+                    {{ user_name }}
+                </span>
+            {% else %}
+                <div class="admin-topbar__avatar">
+                    A
+                </div>
+                <span class="admin-topbar__username">
+                    Admin
+                </span>
+            {% endif %}
+        </div>
+    </div>
+</header>

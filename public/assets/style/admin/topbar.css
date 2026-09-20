@@ -1,0 +1,144 @@
+.admin-topbar {
+    height: var(--topbar-height);
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.admin-topbar__left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.admin-topbar__toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--color-text-light);
+    font-size: 1.2rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.admin-topbar__toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-topbar__title {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.admin-topbar__btn--outline {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+.admin-topbar__btn--outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-topbar {
+    height: var(--topbar-height);
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.admin-topbar__left,
+.admin-topbar__right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.admin-topbar__toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--color-text-light);
+    font-size: 1.2rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.admin-topbar__toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-topbar__title {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.admin-topbar__btn--outline {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+.admin-topbar__btn--outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   User Profile Component in Topbar
+   ========================================================================== */
+
+.admin-topbar__user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+    border-left: 1px solid var(--border-color); /* Delikatny separator od przycisku */
+}
+
+.admin-topbar__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        var(--color-primary) 0%,
+        var(--color-primary-hover) 100%
+    );
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(255, 82, 123, 0.3);
+}
+
+.admin-topbar__username {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+}

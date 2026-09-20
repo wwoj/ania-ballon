@@ -1,0 +1,16 @@
+:root {
+    --color-bg-gradient: #2b2e3c;
+    --color-primary: #ff527b;
+    --color-primary-hover: #ff758c;
+    --color-text-dark: #2b1b54;
+    --color-text-light: #f0f0f0;
+    --color-text-muted: #a0a5b5;
+
+    --bg-surface: #1e202a;
+    --border-color: rgba(255, 255, 255, 0.15);
+
+    --sidebar-width-expanded: 280px;
+    --topbar-height: 70px;
+
+    --font-family: "Poppins", sans-serif;
+}
