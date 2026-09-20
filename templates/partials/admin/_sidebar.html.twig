@@ -1,23 +1,26 @@
 <aside class="admin-sidebar" id="adminSidebar">
     <div class="admin-sidebar__header">
-        <strong>Ania</strong> Balloon
+        <strong>Ania</strong> <span class="admin-sidebar__header-text">Balloon</span>
     </div>
 
     <nav class="admin-sidebar__nav">
         <ul class="admin-sidebar__menu">
             <li class="admin-sidebar__item">
-                <a href="#backdrops" class="admin-sidebar__logout">
-                    Scianki balonowe
+                <a href="#backdrops" class="admin-sidebar__link">
+                    <i class="fa-solid fa-border-all"></i>
+                    <span class="admin-sidebar__text">Scianki balonowe</span>
                 </a>
             </li>
             <li class="admin-sidebar__item">
-                <a href="#animals" class="admin-sidebar__logout">
-                    Balonowe zwierzatka
+                <a href="#animals" class="admin-sidebar__link">
+                    <i class="fa-solid fa-paw"></i>
+                    <span class="admin-sidebar__text">Balonowe zwierzatka</span>
                 </a>
             </li>
             <li class="admin-sidebar__item">
-                <a href="#decorations" class="admin-sidebar__logout">
-                    Dekoracje balonowe
+                <a href="#decorations" class="admin-sidebar__link">
+                    <i class="fa-solid fa-magic"></i>
+                    <span class="admin-sidebar__text">Dekoracje balonowe</span>
                 </a>
             </li>
         </ul>
@@ -25,9 +28,9 @@
 
     <div class="admin-sidebar__footer">
         <ul>
-            <li>
+            <li class="admin-sidebar__item">
                 <a href="{{ path('admin_logout') }}" class="admin-sidebar__logout">
-                    <span class="admin-sidebar__logout-icon">🔒</span>
+                    <i class="fa-solid fa-sign-out-alt"></i>
                     <span class="admin-sidebar__logout-text">Wyloguj</span>
                 </a>
             </li>
