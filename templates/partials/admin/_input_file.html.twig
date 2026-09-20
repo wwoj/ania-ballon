@@ -1,0 +1,125 @@
+
+<style>.photo-uploader {
+    width: 100%;
+}
+
+.photo-uploader__dropzone {
+    border: 2px dashed var(--border-color, #e2e8f0);
+    background-color: var(--bg-surface, #ffffff);
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.photo-uploader__dropzone:hover,
+.photo-uploader__dropzone--is-dragover {
+    border-color: var(--color-primary, #ff527b);
+    background-color: rgba(255, 82, 123, 0.02);
+}
+
+.photo-uploader__icon {
+    font-size: 2.8rem;
+    color: var(--color-primary, #ff527b);
+    margin-bottom: 12px;
+}
+
+.photo-uploader__title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text, #2b1b54);
+    margin: 0 0 6px 0;
+}
+
+.photo-uploader__subtitle {
+    font-size: 0.85rem;
+    color: var(--color-text-muted, #8a8a9a);
+    margin: 0;
+}
+
+.photo-uploader__divider {
+    display: flex;
+    align-items: center;
+    margin: 18px 0;
+    width: 100%;
+    max-width: 200px;
+}
+
+.photo-uploader__divider::before,
+.photo-uploader__divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.photo-uploader__divider-text {
+    padding: 0 10px;
+    font-size: 0.8rem;
+    color: var(--color-text-muted, #8a8a9a);
+    text-transform: uppercase;
+}
+
+/* Stylowanie ukrytego input file i przycisku customowego */
+.photo-uploader__file-label {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Ukrywamy domyślny, brzydki input przeglądarki */
+.photo-uploader__file-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Własny stylizowany przycisk */
+.photo-uploader__file-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #ff527b 0%, #ff758c 100%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 22px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(255, 82, 123, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.photo-uploader__file-label:hover .photo-uploader__file-button {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 82, 123, 0.35);
+}</style>
+
+<section class="photo-uploader">
+    <div class="photo-uploader__dropzone" id="dropzone">
+        <div class="photo-uploader__icon">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+        </div>
+        <h3 class="photo-uploader__title">Przeciągnij i upuść zdjęcia tutaj</h3>
+        <p class="photo-uploader__subtitle">obsługiwane formaty: JPG, PNG, WEBP (max 10MB)</p>
+        
+        <div class="photo-uploader__divider">
+            <span class="photo-uploader__divider-text">lub</span>
+        </div>
+
+        <!-- Customowy Input File -->
+        <label class="photo-uploader__file-label">
+            <input type="file" class="photo-uploader__file-input" multiple accept="image/*">
+            <span class="photo-uploader__file-button">
+                <i class="fa-solid fa-folder-open"></i> Wybierz z dysku
+            </span>
+        </label>
+    </div>
+</section>

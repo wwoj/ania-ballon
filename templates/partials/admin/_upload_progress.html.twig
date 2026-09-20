@@ -1,0 +1,174 @@
+<style>
+/* ==========================================================================
+   Selected Files Module (BEM Architecture)
+   ========================================================================== */
+
+.selected-files {
+    background-color: var(--bg-surface, #ffffff);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.selected-files__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selected-files__title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text, #2b1b54);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.selected-files__icon {
+    color: var(--color-primary, #ff527b);
+}
+
+.selected-files__count {
+    color: var(--color-text-muted, #8a8a9a);
+    font-weight: 500;
+}
+
+.selected-files__clear-btn {
+    background: none;
+    border: none;
+    color: var(--color-text-muted, #8a8a9a);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.selected-files__clear-btn:hover {
+    color: #ef4444;
+}
+
+.selected-files__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   File Item (Pojedynczy plik na liście)
+   -------------------------------------------------------------------------- */
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--bg-hover, #f8fafc);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 10px;
+    padding: 10px 14px;
+}
+
+.file-item__preview {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background-color: #ffe3ec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.file-item__icon {
+    font-size: 1rem;
+    color: #ff527b;
+}
+
+.file-item__details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.file-item__name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text, #2b1b54);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-item__size {
+    font-size: 0.75rem;
+    color: var(--color-text-muted, #8a8a9a);
+}
+
+.file-item__remove-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: var(--color-text-muted, #8a8a9a);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.file-item__remove-btn:hover {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+</style>
+<div class="selected-files">
+    <div class="selected-files__header">
+        <h4 class="selected-files__title">
+            <i class="fa-solid fa-paperclip selected-files__icon"></i>
+            Wybrane pliki z urządzenia <span class="selected-files__count">(2)</span>
+        </h4>
+        <button type="button" class="selected-files__clear-btn">Usuń wszystkie</button>
+    </div>
+
+    <ul class="selected-files__list">
+        
+        <li class="file-item">
+            <div class="file-item__preview">
+                <i class="fa-regular fa-image file-item__icon"></i>
+            </div>
+            <div class="file-item__details">
+                <span class="file-item__name">balony_urodziny_chicago_01.jpg</span>
+                <span class="file-item__size">2.4 MB</span>
+            </div>
+            <button type="button" class="file-item__remove-btn" title="Usuń plik">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </li>
+
+        <li class="file-item">
+            <div class="file-item__preview">
+                <i class="fa-regular fa-image file-item__icon"></i>
+            </div>
+            <div class="file-item__details">
+                <span class="file-item__name">scianka_komunia_02.png</span>
+                <span class="file-item__size">1.8 MB</span>
+            </div>
+            <button type="button" class="file-item__remove-btn" title="Usuń plik">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </li>
+
+    </ul>
+    <button>Upload</button>
+</div>

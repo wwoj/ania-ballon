@@ -1,0 +1,40 @@
+#photos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#photos .photo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 10px;
+    margin-bottom: 10px;
+
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+#photos .photo img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.drag-handle {
+    cursor: grab;
+    font-size: 22px;
+    color: #999;
+}
+
+#photos .sortable-placeholder {
+    height: 100px;
+    background: #eee;
+    border: 2px dashed #999;
+}
+
+.item__preview img {
+    max-width: 100%;
+}
