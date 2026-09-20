@@ -71,8 +71,10 @@
             selectedFiles.forEach((file) => {
                 formData.append('images[]', file);
             });
+            const galleryType = 1;
+            formData.append('galleryType', galleryType)
 
-console.log(selectedFiles)
+            console.log(selectedFiles)
             try {
                 const response = await fetch('/admin/upload', {
                     method: 'POST',
