@@ -1,0 +1,155 @@
+<style>
+.modal-gallery {
+    position: fixed;
+    inset: 0; 
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-gallery--is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-gallery__backdrop {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(135deg, rgba(230, 100, 101, 0.7), rgba(145, 152, 229, 0.7));
+    backdrop-filter: blur(8px);
+}
+
+.modal-gallery__nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50vw; 
+    z-index: 2;
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.modal-gallery__nav--prev {
+    left: 0;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.modal-gallery__nav--next {
+    right: 0;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+@media (hover: hover) {
+    .modal-gallery__nav:hover {
+        color: #ffffff;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+}
+
+.modal-gallery__dialog {
+    position: relative;
+    z-index: 1; 
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none; 
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-gallery--is-open .modal-gallery__dialog {
+    transform: scale(1);
+}
+
+.modal-gallery__figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    pointer-events: auto; 
+}
+
+.modal-gallery__image {
+    max-width: 100%;
+    max-height: 75vh;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+}
+
+.modal-gallery__caption {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #4a5568;
+    text-align: center;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.modal-gallery__close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10; 
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.modal-gallery__close-btn:hover {
+    transform: scale(1.1);
+    background-color: #f0f0f0;
+}
+</style>
+
+
+<div class="modal-gallery" id="photo-modal">
+    
+    <div class="modal-gallery__backdrop"></div>
+
+    <button type="button" class="modal-gallery__close-btn" aria-label="Zamknij">&times;</button>
+
+    <button type="button" class="modal-gallery__nav modal-gallery__nav--prev" aria-label="Poprzednie zdjęcie">&#10094;</button>
+    <button type="button" class="modal-gallery__nav modal-gallery__nav--next" aria-label="Następne zdjęcie">&#10095;</button>
+
+    <div class="modal-gallery__dialog">
+        <figure class="modal-gallery__figure">
+            <img class="modal-gallery__image" src="" alt="" />
+            <figcaption class="modal-gallery__caption"></figcaption>
+        </figure>
+    </div>
+
+</div>

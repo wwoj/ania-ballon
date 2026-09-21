@@ -6,29 +6,27 @@
 
     <div class="header-inner">
 
-        {# LOGO #}
         <a href="#" class="logo" aria-label="Ania Balloons - strona główna">
             Ania Balloon
         </a>
 
 
-        {# GŁÓWNA NAWIGACJA #}
         <nav class="main-nav" aria-label="Główna nawigacja">
 
             <a href="{{ path('home') }}" class="nav-link {{ current_route == 'home' ? 'active' : '' }}">
                 {{ 'nav.home'|trans }}
             </a>
 
-            <a href="{{ path('app_services') }}" class="nav-link">
-                {{ 'nav.services'|trans }}
+            <a href="{{ path('app_backdrop') }}" class="nav-link">
+                {{ 'nav.backdrop'|trans }}
             </a>
 
-            <a href="#" class="nav-link">
-                {{ 'nav.gallery'|trans }}
+            <a href="{{ path('app_animal') }}" class="nav-link">
+                {{ 'nav.animal'|trans }}
             </a>
 
-            <a href="#" class="nav-link">
-                {{ 'nav.about_us'|trans }}
+            <a href="{{ path('app_event') }}" class="nav-link">
+                {{ 'nav.event'|trans }}
             </a>
 
             <a href="{{ path('contact') }}" class="nav-link {{ current_route == 'contact' ? 'active' : '' }}">
@@ -38,7 +36,6 @@
         </nav>
 
 
-        {# JĘZYK - NA RAZIE TYLKO INFORMACYJNIE #}
         <div class="language-switcher">
     {% if app.request.locale == 'en' %}
         <span class="active">🇺🇸EN</span>|
