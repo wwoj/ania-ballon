@@ -60,6 +60,7 @@ readonly final class GalleryUploadService
             $this->entityManager->persist($pictureGallery);
 
             $uploadedImages[] = [
+                'pictureGallery' => $pictureGallery,
                 'filename' => $filename,
                 'originalName' => $originalName,
                 'position' => $position,
@@ -70,6 +71,72 @@ readonly final class GalleryUploadService
 
         $this->entityManager->flush();
 
+        foreach ($uploadedImages as $index => $uploadedImage) {
+            $pictureGallery = $uploadedImage['pictureGallery'];
+            $uploadedImages[$index] = [
+                'pictureGalleryId' => $pictureGallery->getId(),
+                'filename' => $uploadedImage['filename'],
+                'originalName' => $uploadedImage['originalName'],
+                'position' => $uploadedImage['position'],
+            ];
+        }
+
         return $uploadedImages;
+    }
+
+    public function reorder(array $positions): void
+    {
+        foreach ($positions as $item) {
+            $gallery = $this->pictureGalleryRepository->find($item['id']);
+
+            if (!$gallery) {
+                continue;
+            }
+
+            $gallery->setPosition($item['position']);
+        }
+
+        $this->entityManager->flush();
+    }
+
+    public function delete(PictureGallery $pictureGallery): void
+    {
+        $image = $pictureGallery->getImage();
+        $filename = $image?->getFilename();
+        $galleryType = $pictureGallery->getGalleryType();
+
+        if ($image) {
+            $image->removePictureGallery($pictureGallery);
+        }
+
+        $this->entityManager->remove($pictureGallery);
+
+        if ($image && $image->getPictureGalleries()->isEmpty()) {
+            $this->entityManager->remove($image);
+        }
+
+        $this->entityManager->flush();
+
+        if ($galleryType) {
+            $this->normalizePositions($galleryType);
+        }
+
+        if ($filename && $image && $image->getPictureGalleries()->isEmpty()) {
+            $this->fileUploader->delete($filename);
+        }
+    }
+
+    public function normalizePositions(GalleryType $galleryType): void
+    {
+        $galleries = $this->pictureGalleryRepository->findBy(
+            ['galleryType' => $galleryType],
+            ['position' => 'ASC']
+        );
+
+        foreach ($galleries as $index => $gallery) {
+            $gallery->setPosition($index + 1);
+        }
+
+        $this->entityManager->flush();
     }
 }

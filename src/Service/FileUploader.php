@@ -28,4 +28,13 @@ final class FileUploader
 
         return $filename;
     }
+
+    public function delete(string $filename): void
+    {
+        $path = $this->uploadDirectory . '/' . $filename;
+
+        if (is_file($path)) {
+            unlink($path);
+        }
+    }
 }

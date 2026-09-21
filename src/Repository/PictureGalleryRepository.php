@@ -28,4 +28,15 @@ class PictureGalleryRepository extends ServiceEntityRepository
 
         return ((int) $lastPosition) + 1;
     }
+
+    public function getSortedGalleryPictures(GalleryType $galleryType): array
+    {
+        return $this->createQueryBuilder('pg')
+            ->join('pg.image', 'i')
+            ->where('pg.galleryType = :galleryType')
+            ->setParameter('galleryType', $galleryType)
+            ->addOrderBy('pg.position', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
 }

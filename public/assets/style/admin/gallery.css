@@ -1,11 +1,18 @@
+.file-item__preview img {
+    max-width: 100%;
+}
+
 #photos {
     list-style: none;
     padding: 0;
     margin: 0;
+    max-width: 800px;
+    color: var(--color-text-dark);
 }
 
 #photos .photo {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     gap: 15px;
 
@@ -15,18 +22,105 @@
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 6px;
+
+    cursor: grab;
+    transition:
+        opacity 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s,
+        transform 0.2s ease;
+}
+
+#photos .photo__actions {
+    margin-left: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+#photos .photo:hover .photo__actions,
+#photos .photo:focus-within .photo__actions {
+    opacity: 1;
+    visibility: visible;
+}
+
+#photos .photo__delete-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #999;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+#photos .photo__delete-btn:hover,
+#photos .photo__delete-btn:focus-visible {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+#photos .photo.is-dragging {
+    opacity: 0.45;
+}
+
+#photos .photo.is-drag-over {
+    border-color: #ff527b;
+    box-shadow: 0 0 0 2px rgba(255, 82, 123, 0.25);
+}
+
+#photos .sortable-ghost {
+    opacity: 0.35;
+    border: 2px dashed #ff527b;
+}
+
+#photos .sortable-chosen {
+    cursor: grabbing;
+}
+
+#photos .sortable-drag {
+    opacity: 0.9;
+    transform: rotate(1deg);
+    box-shadow: 0 14px 28px rgba(18, 24, 40, 0.18);
+}
+
+#photos .drag-placeholder {
+    margin-bottom: 10px;
+    border: 2px dashed #ff527b;
+    border-radius: 6px;
+    background: rgba(255, 82, 123, 0.08);
+    transition:
+        height 0.2s ease,
+        margin 0.2s ease;
 }
 
 #photos .photo img {
     width: 120px;
     height: 80px;
     object-fit: cover;
+    border-radius: 4px;
 }
 
 .drag-handle {
-    cursor: grab;
     font-size: 22px;
     color: #999;
+    user-select: none;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 4px;
 }
 
 #photos .sortable-placeholder {
@@ -37,4 +131,31 @@
 
 .item__preview img {
     max-width: 100%;
+}
+
+.gallery__save-order-btn,
+.selected-files__upload-btn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #ff527b 0%, #ff758c 100%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 22px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(255, 82, 123, 0.25);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+.selected-files__upload-btn:hover,
+.gallery__save-order-btn:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 82, 123, 0.35);
 }

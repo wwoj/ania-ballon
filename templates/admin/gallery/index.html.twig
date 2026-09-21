@@ -4,432 +4,60 @@
 
 {% block javascripts %}
     {{ parent() }}
-
+    <script>
+        const GALLERY_TYPE = {{ galleryType.value }};
+        const GALLERY_PATH = `{{ asset("uploads/gallery") }}`;
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const photos = document.querySelector('#photos');
-            const result = document.querySelector('#result');
-            const storageKey = 'admin_backdrop_order';
-
-            if (!photos || typeof Sortable === 'undefined') {
-                return;
-            }
-
-            const getPhotoOrder = () => Array.from(photos.querySelectorAll('.photo'))
-                .map((photo) => photo.dataset.id);
-
-            const updateResult = () => {
-                if (result) {
-                    result.textContent = `Aktualna kolejność: ${getPhotoOrder().join(', ')}`;
-                }
-            };
-
-            let savedOrder = null;
-            try {
-                savedOrder = JSON.parse(localStorage.getItem(storageKey) || 'null');
-            } catch (error) {
-                localStorage.removeItem(storageKey);
-            }
-
-            if (Array.isArray(savedOrder)) {
-                savedOrder.forEach((id) => {
-                    const photo = photos.querySelector(`[data-id="${id}"]`);
-                    if (photo) {
-                        photos.appendChild(photo);
-                    }
-                });
-            }
-
-            new Sortable(photos, {
-                animation: 180,
-                chosenClass: 'sortable-chosen',
-                dragClass: 'sortable-drag',
-                ghostClass: 'sortable-ghost',
-                draggable: '.photo',
-                onEnd: () => {
-                    localStorage.setItem(storageKey, JSON.stringify(getPhotoOrder()));
-                    updateResult();
-                },
-            });
-
-            updateResult();
-        });
-
-        let selectedFiles = [];
-
-    $(document).ready(function () {
-        $(document).on('change', '.photo-uploader__file-input', function () {
-            const newFiles = Array.from(this.files);
-            selectedFiles.push(...newFiles);
-            renderSelectedFiles();
-            this.value = '';
-        });
-
-        $(document).on('click', '#submitUpload', async function () {
-            const formData = new FormData();
-            selectedFiles.forEach((file) => {
-                formData.append('images[]', file);
-            });
-            const galleryType = 1;
-            formData.append('galleryType', galleryType)
-
-            console.log(selectedFiles)
-            try {
-                const response = await fetch('/admin/upload', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                const data = await response.json();
-
-                if (!response.ok) {
-                    throw new Error('Upload failed');
-                }
-
-                //const data = await response.json();
-
-                console.log(data);
-
-                selectedFiles = [];
-            } catch (error) {
-                console.error(error);
-            } finally {
-                // clear input
-                isUploading = false;
-            }
-        })
-
-        $(document).on('click', '.file-item__remove-btn', function () {
-            const index = $(this).closest('.file-item').data('index');
-
-            selectedFiles.splice(index, 1);
-
-            renderSelectedFiles();
-        });
-    });
-
-    function renderSelectedFiles() {
-        const $list = $('.selected-files__list');
-
-        $list.empty();
-
-        selectedFiles.forEach((file, index) => {
-            $list.append(prepareUploadLi(file, index));
-        });
-    }
-
-    function prepareUploadLi(file, index) {
-        const fileUrl = URL.createObjectURL(file);
-
-        return $(`
-            <li class="file-item" data-index="${index}">
-                <div class="file-item__preview">
-                    <img src="${fileUrl}" alt="${file.name}">
-                </div>
-
-                <div class="file-item__details">
-                    <span class="file-item__name">${file.name}</span>
-                    <span class="file-item__size">
-                        ${formatFileSize(file.size)}
-                    </span>
-                </div>
-
-                <button
-                    type="button"
-                    class="file-item__remove-btn"
-                    title="Usuń plik"
-                >
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </li>
-        `);
-    }
-
-    function formatFileSize(bytes) {
-        if (bytes === 0) {
-            return '0 B';
-        }
-
-        const units = ['B', 'KB', 'MB', 'GB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(1024));
-
-        return `${(bytes / Math.pow(1024, i)).toFixed(1)} ${units[i]}`;
-    }
-
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const photos = document.querySelector('#photos');
-            const result = document.querySelector('#result');
-            const storageKey = 'admin_backdrop_order';
-            let draggedPhoto = null;
-            let dropPlaceholder = null;
-
-            if (!photos) {
-                return;
-            }
-
-            if (typeof Sortable !== 'undefined') {
-                return;
-            }
-
-            const getPhotoOrder = () => Array.from(photos.querySelectorAll('.photo'))
-                .map((photo) => photo.dataset.id);
-
-            const updateResult = () => {
-                if (result) {
-                    result.textContent = `Aktualna kolejność: ${getPhotoOrder().join(', ')}`;
-                }
-            };
-
-            let savedOrder = null;
-            try {
-                savedOrder = JSON.parse(localStorage.getItem(storageKey) || 'null');
-            } catch (error) {
-                localStorage.removeItem(storageKey);
-            }
-            if (Array.isArray(savedOrder)) {
-                savedOrder.forEach((id) => {
-                    const photo = photos.querySelector(`[data-id="${id}"]`);
-                    if (photo) {
-                        photos.appendChild(photo);
-                    }
-                });
-            }
-
-            photos.querySelectorAll('.photo').forEach((photo) => {
-                photo.addEventListener('dragstart', (event) => {
-                    draggedPhoto = photo;
-                    dropPlaceholder = document.createElement('li');
-                    dropPlaceholder.className = 'drag-placeholder';
-                    dropPlaceholder.style.height = `${photo.offsetHeight}px`;
-                    photos.insertBefore(dropPlaceholder, photo.nextSibling);
-                    photo.classList.add('is-dragging');
-                    event.dataTransfer.effectAllowed = 'move';
-                    event.dataTransfer.setData('text/plain', photo.dataset.id);
-                });
-
-                photo.addEventListener('dragover', (event) => {
-                    event.preventDefault();
-                    if (photo !== draggedPhoto) {
-                        photo.classList.add('is-drag-over');
-
-                        const targetPosition = photo.getBoundingClientRect();
-                        const insertAfter = event.clientY > targetPosition.top + targetPosition.height / 2;
-                        const nextElement = insertAfter ? photo.nextSibling : photo;
-
-                        if (dropPlaceholder && nextElement !== dropPlaceholder) {
-                            photos.insertBefore(dropPlaceholder, nextElement);
-                        }
-                    }
-                });
-
-                photo.addEventListener('dragleave', () => {
-                    photo.classList.remove('is-drag-over');
-                });
-
-                photo.addEventListener('drop', (event) => {
-                    event.preventDefault();
-                    photo.classList.remove('is-drag-over');
-
-                    if (!draggedPhoto || draggedPhoto === photo) {
-                        return;
-                    }
-
-                    if (dropPlaceholder) {
-                        dropPlaceholder.replaceWith(draggedPhoto);
-                        dropPlaceholder = null;
-                    }
-
-                    localStorage.setItem(storageKey, JSON.stringify(getPhotoOrder()));
-                    updateResult();
-                });
-
-                photo.addEventListener('dragend', () => {
-                    photo.classList.remove('is-dragging');
-                    photos.querySelectorAll('.photo').forEach((item) => {
-                        item.classList.remove('is-drag-over');
-                    });
-                    if (dropPlaceholder) {
-                        dropPlaceholder.remove();
-                        dropPlaceholder = null;
-                    }
-                    draggedPhoto = null;
-                });
-            });
-
-            updateResult();
-        });
-    </script>
+    <script src="{{ asset('assets/js/admin-gallery.js') }}"></script>
 {% endblock %}
-
 
 {% block stylesheets %}
     {{ parent() }}
-    <style>
-        .file-item__preview img {
-            max-width: 100%;
-        }
-        #photos {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            max-width: 800px;
-        }
-
-        #photos .photo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-
-            padding: 10px;
-            margin-bottom: 10px;
-
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-
-            cursor: grab;
-            transition: opacity 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.2s ease;
-        }
-
-        #photos .photo.is-dragging {
-            opacity: 0.45;
-        }
-
-        #photos .photo.is-drag-over {
-            border-color: #ff527b;
-            box-shadow: 0 0 0 2px rgba(255, 82, 123, 0.25);
-        }
-
-        #photos .sortable-ghost {
-            opacity: 0.35;
-            border: 2px dashed #ff527b;
-        }
-
-        #photos .sortable-chosen {
-            cursor: grabbing;
-        }
-
-        #photos .sortable-drag {
-            opacity: 0.9;
-            transform: rotate(1deg);
-            box-shadow: 0 14px 28px rgba(18, 24, 40, 0.18);
-        }
-
-        #photos .drag-placeholder {
-            margin-bottom: 10px;
-            border: 2px dashed #ff527b;
-            border-radius: 6px;
-            background: rgba(255, 82, 123, 0.08);
-            transition: height 0.2s ease, margin 0.2s ease;
-        }
-
-        #photos .photo img {
-            width: 120px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-
-        .drag-handle {
-            font-size: 22px;
-            color: #999;
-            user-select: none;
-        }
-
-        #result {
-            margin-top: 20px;
-            padding: 10px;
-            background: #f5f5f5;
-            border-radius: 4px;
-        }
-    </style>
-    
+    <link rel="stylesheet" href="{{ asset('assets/style/admin/gallery.css') }}">
 {% endblock %}
+
 {% block body %}
-<div class="example-wrapper">
+<div class="gallery example-wrapper">
     <h1>{{ title }}</h1>
 
     {% include 'partials/admin/_input_file.html.twig' %}
     {% include 'partials/admin/_upload_progress.html.twig' %}
-
-    <ul>
-        <li>Number of current uploaded pictures: ...</li>
-        <li>Number of active displayed pictures: ...</li>
-        <li><button class="btn btn-primary" id="save-order">Save Order</button></li>
-        <li><button class="btn btn-primary" id="add-picture">Add picture</button></li>
-    </ul>
+    <hr/>
+    <div>
+        <button type="button" class="gallery__save-order-btn btn btn-outline-success" id="save-order">
+            Save Order
+        </button>
+    </div>
+    <hr/>
 
    <ul id="photos" aria-label="Backdrops order">
-    <li class="photo" data-id="101" draggable="true">
+
+    {% for image in images %}
+        <li class="photo" data-pg-id="{{ image.id }}" draggable="true">
             <span class="drag-handle">☰</span>
-
-            <img src="https://picsum.photos/id/1015/300/200">
-
+            <img src="{{ asset('uploads/gallery/' ~ image.image.filename) }}" alt="{{ image.image.originalName }}">
             <div>
                 <div class="photo-name">
-                    Zdjęcie 1
+                    {{ image.image.originalName }}
                 </div>
-
                 <div class="photo-id">
-                    ID: 101
+                    {{ image.id }}
                 </div>
             </div>
-        </li>
-
-
-        <li class="photo" data-id="102" draggable="true">
-            <span class="drag-handle">☰</span>
-
-            <img src="https://picsum.photos/id/1016/300/200">
-
-            <div>
-                <div class="photo-name">
-                    Zdjęcie 2
-                </div>
-
-                <div class="photo-id">
-                    ID: 102
-                </div>
+            <div class="photo__actions">
+                <button
+                    type="button"
+                    class="photo__delete-btn"
+                    title="Usuń zdjęcie"
+                    aria-label="Usuń zdjęcie {{ image.image.originalName }}"
+                >
+                    <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
+                </button>
             </div>
         </li>
+    {% endfor %}
 
-
-        <li class="photo" data-id="103" draggable="true">
-            <span class="drag-handle">☰</span>
-
-            <img src="https://picsum.photos/id/1018/300/200">
-
-            <div>
-                <div class="photo-name">
-                    Zdjęcie 3
-                </div>
-
-                <div class="photo-id">
-                    ID: 103
-                </div>
-            </div>
-        </li>
-
-
-        <li class="photo" data-id="104" draggable="true">
-            <span class="drag-handle">☰</span>
-
-            <img src="https://picsum.photos/id/1020/300/200">
-
-            <div>
-                <div class="photo-name">
-                    Zdjęcie 4
-                </div>
-
-                <div class="photo-id">
-                    ID: 104
-                </div>
-            </div>
-        </li>
    </ul>
 </div>
 {% endblock %}

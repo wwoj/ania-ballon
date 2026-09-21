@@ -112,6 +112,21 @@
     color: var(--color-text-muted, #8a8a9a);
 }
 
+.file-item__actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.file-item:hover .file-item__actions,
+.file-item:focus-within .file-item__actions {
+    opacity: 1;
+    visibility: visible;
+}
+
 .file-item__remove-btn {
     width: 28px;
     height: 28px;
@@ -134,41 +149,24 @@
 </style>
 <div class="selected-files">
     <div class="selected-files__header">
-        <h4 class="selected-files__title">
+        {# <h4 class="selected-files__title">
             <i class="fa-solid fa-paperclip selected-files__icon"></i>
             Wybrane pliki z urządzenia <span class="selected-files__count">(2)</span>
-        </h4>
-        <button type="button" class="selected-files__clear-btn">Usuń wszystkie</button>
+        </h4> #}
+        {# <button type="button" class="selected-files__clear-btn">Usuń wszystkie</button> #}
     </div>
 
     <ul class="selected-files__list">
-        
-        <li class="file-item">
-            <div class="file-item__preview">
-                <i class="fa-regular fa-image file-item__icon"></i>
-            </div>
-            <div class="file-item__details">
-                <span class="file-item__name">balony_urodziny_chicago_01.jpg</span>
-                <span class="file-item__size">2.4 MB</span>
-            </div>
-            <button type="button" class="file-item__remove-btn" title="Usuń plik">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </li>
-
-        <li class="file-item">
-            <div class="file-item__preview">
-                <i class="fa-regular fa-image file-item__icon"></i>
-            </div>
-            <div class="file-item__details">
-                <span class="file-item__name">scianka_komunia_02.png</span>
-                <span class="file-item__size">1.8 MB</span>
-            </div>
-            <button type="button" class="file-item__remove-btn" title="Usuń plik">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-        </li>
 
     </ul>
-    <button id="submitUpload">Upload</button>
-</div>
+    <button type="button" class="selected-files__upload-btn" id="submitUpload">
+        Upload
+        <div class="file-item__actions">
+            <button
+                type="button"
+                class="file-item__remove-btn"
+                title="Usuń plik"
+                aria-label="Usuń plik ${file.name}"
+            >
+            </button>
+        </div>
