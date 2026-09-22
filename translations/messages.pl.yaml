@@ -6,6 +6,9 @@ nav:
     book_now: "Zarezerwuj"
     alt_logo: "Ania Balloons - Dekoracje balonowe Chicago"
     services: "Usługi"
+    backdrop: "Ścianki balonowe"
+    animal: "Balonowe zwierzątka"
+    event: "Wydarzenia"
 
 hero:
     title: "Dekoracje balonowe <br/> na każdą okazję<br/> w Chicago i okolicach"
