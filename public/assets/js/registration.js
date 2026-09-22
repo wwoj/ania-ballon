@@ -16,7 +16,11 @@ $(document).ready(function () {
             },
             error: function (xhr, status, error) {
                 // Handle error response
-                alert("Registration failed. Please try again.");
+                const message =
+                    xhr.responseJSON?.message ??
+                    "Registration failed. Please try again.";
+                alert(message);
+
                 console.error(error);
             },
         });

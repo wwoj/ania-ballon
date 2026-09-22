@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Ania Balloon - Dashboard{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ asset('assets/picture/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/picture/logo.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{{ asset('assets/style/admin/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/style/admin/admin.css?v=1') }}">
     {% block stylesheets %}
     {% endblock %}
 </head>

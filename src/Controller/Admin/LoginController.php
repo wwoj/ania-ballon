@@ -49,6 +49,13 @@ final class LoginController extends AbstractController
             ], Response::HTTP_UNAUTHORIZED);
         }
 
+        if ($user->isActive() !== true) {
+            return $this->json([
+                'success' => false,
+                'message' => 'User is not activated',
+            ], Response::HTTP_UNAUTHORIZED);
+        }
+
         $security->login($user, 'form_login', 'main');
 
         return $this->json([

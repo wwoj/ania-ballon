@@ -29,13 +29,24 @@ final class RegisterController extends AbstractController
     ): JsonResponse {
         $user = new User();
 
+        $email = $request->request->getString('email');
+
+        $userExist = $userRepository->findOneBy(['email' => $email]);
+
+        if ($userExist !== null) {
+            return $this->json([
+                'success' => false,
+                'message' => 'This email address is already used.',
+            ], Response::HTTP_UNAUTHORIZED);
+        }
+
         $hashedPassword = $passwordHasher->hashPassword(
             $user,
             $request->request->getString('password')
         );
 
         $user->setPassword($hashedPassword);
-        $user->setEmail($request->request->getString('email'));
+        $user->setEmail($email);
 
         $userRepository->save($user, true);
 
