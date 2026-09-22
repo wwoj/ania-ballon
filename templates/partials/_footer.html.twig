@@ -15,7 +15,7 @@
                 {{ 'footer.description'|trans }}
                 </p>
 
-                <a href="#" class="footer-main-button">
+                <a href="{{ path('contact') }}" class="footer-main-button">
                     {{ 'footer.requestQuote'|trans }}
                     <span aria-hidden="true">→</span>
                 </a>
@@ -35,31 +35,31 @@
                 <ul class="footer-links">
 
                     <li>
-                        <a href="#">
+                        <a href="{{ path('home') }}">
                             {{ 'nav.home'|trans }}
                         </a>
                     </li>
 
                     <li>
-                        <a href="#">
-                            {{ 'nav.services'|trans }}
+                        <a href=""{{ path('app_backdrop') }}"">
+                            {{ 'nav.backdrop'|trans }}
                         </a>
                     </li>
 
                     <li>
-                        <a href="#">
-                            {{ 'nav.about_us'|trans }}
+                        <a href=""{{ path('app_animal') }}"">
+                            {{ 'nav.animal'|trans }}
                         </a>
                     </li>
 
                     <li>
-                        <a href="#">
-                            {{ 'nav.gallery'|trans }}
+                        <a href="{{ path('app_event') }}">
+                            {{ 'nav.event'|trans }}
                         </a>
                     </li>
 
                     <li>
-                        <a href="#">
+                        <a href="{{ path('contact') }}">
                             {{ 'nav.contact'|trans }}
                         </a>
                     </li>
@@ -67,40 +67,6 @@
                 </ul>
 
             </div>
-
-
-            {# ==================================================
-               SERVICES
-            ================================================== #}
-
-            <div class="footer-column">
-
-                <h3>
-                    {{ 'footer.services'|trans }}
-                </h3>
-
-                <ul class="footer-links">
-                    <li>
-                        <a href="#">
-                        {{ 'services.garlandsAndBackdrops'|trans }}
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            {{ 'services.animalBalloons'|trans }}
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            {{ 'services.eventDecorations'|trans }}
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-
 
             {# ==================================================
                CONTACT

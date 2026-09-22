@@ -160,6 +160,50 @@
     font-weight: 500;
 }
 
+.about-highlights {
+    display: grid;
+    gap: 10px;
+    margin: 24px 0 6px;
+}
+
+.about-highlight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border: 1px solid rgba(240, 111, 155, 0.16);
+    border-radius: 14px;
+    background: rgba(255, 253, 251, 0.68);
+}
+
+.about-highlight__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    border-radius: 11px;
+    background: #ffe0eb;
+    color: #e35f8d;
+}
+
+.about-highlight > span:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.about-highlight strong {
+    color: #55233f;
+    font-size: 13px;
+}
+
+.about-highlight small {
+    color: #785f6b;
+    font-size: 12px;
+}
+
 /* ==================================================
    BUTTON
 ================================================== */

@@ -41,7 +41,7 @@ final class GalleryController extends AbstractController
 
         return $this->render('gallery/index.html.twig', [
             'controller_name' => 'GalleryController',
-            'title' => 'Backdrops',
+            'title' => 'backdrop',
             'pictures' => $pictures,
         ]);
     }
@@ -61,7 +61,7 @@ final class GalleryController extends AbstractController
 
         return $this->render('gallery/index.html.twig', [
             'controller_name' => 'GalleryController',
-            'title' => 'Animals',
+            'title' => 'animal',
             'pictures' => $pictures,
 
         ]);
@@ -82,7 +82,7 @@ final class GalleryController extends AbstractController
 
         return $this->render('gallery/index.html.twig', [
             'controller_name' => 'GalleryController',
-            'title' => 'Events',
+            'title' => 'event',
             'pictures' => $pictures,
 
         ]);

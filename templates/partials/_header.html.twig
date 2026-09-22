@@ -17,15 +17,15 @@
                 {{ 'nav.home'|trans }}
             </a>
 
-            <a href="{{ path('app_backdrop') }}" class="nav-link">
+            <a href="{{ path('app_backdrop') }}" class="nav-link {{ current_route == 'app_backdrop' ? 'active' : '' }}">
                 {{ 'nav.backdrop'|trans }}
             </a>
 
-            <a href="{{ path('app_animal') }}" class="nav-link">
+            <a href="{{ path('app_animal') }}" class="nav-link {{ current_route == 'app_animal' ? 'active' : '' }}">
                 {{ 'nav.animal'|trans }}
             </a>
 
-            <a href="{{ path('app_event') }}" class="nav-link">
+            <a href="{{ path('app_event') }}" class="nav-link {{ current_route == 'app_event' ? 'active' : '' }}">
                 {{ 'nav.event'|trans }}
             </a>
 

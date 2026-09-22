@@ -34,8 +34,12 @@ Zobacz naszą galerię wyjątkowych dekoracji balonowych w Chicago i okolicach. 
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #ff6f61;
+    color: rgb(255, 133, 161);
     margin-bottom: 10px;
+    box-shadow: none;
+    background-color: #fce7f3;
+    padding: 0.5rem 1.5rem;
+    border-radius: 21px;
 }
 
 .gallery-hero__title {
@@ -319,7 +323,7 @@ Zobacz naszą galerię wyjątkowych dekoracji balonowych w Chicago i okolicach. 
 <div class="example-wrapper">
     <section class="gallery-hero">
         <div class="container">
-            <span class="gallery-hero__subtitle">Nasze Realizacje</span>
+            <span class="gallery-hero__subtitle">Nasze Realizacje {{ title|trans }}</span>
             <h1 class="gallery-hero__title">Galeria Dekoracji i Ścianek Balonowych</h1>
             <p class="gallery-hero__lead">
                 Odkryj nasze unikalne aranżacje balonowe stworzone z pasją na wyjątkowe okazje w Chicago i okolicach. 
