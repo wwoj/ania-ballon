@@ -1,3 +1,8 @@
+home:
+    meta:
+        title: "Najpiękniejsze Dekoracje Balonowe w Chicago | Ania Balloon"
+        description: "Tworzymy wyjątkowe dekoracje balonowe w Chicago i okolicach — ścianki balonowe, girlandy, łuki, figury i aranżacje na urodziny, wesela, baby shower oraz eventy."
+
 nav:
     home: "Strona główna"
     gallery: "Galeria"
@@ -14,6 +19,10 @@ hero:
     title: "Dekoracje balonowe <br/> na każdą okazję<br/> w Chicago i okolicach"
     subtitle: "Tworzymy wyjątkowe dekoracje balonowe na urodziny, przyjęcia, baby shower, wesela i inne wyjątkowe wydarzenia w Chicago i okolicach."
     button_text: "Zarezerwuj termin"
+    eyebrow: "Magia w każdym detalu"
+    gallery_button: "Zobacz galerię"
+    trust_decorations: "Dekoracje z charakterem"
+    trust_locations: "Chicago i okolice"
 
 services:
     whatWeDo: "Co oferujemy"
@@ -29,6 +38,7 @@ services:
     eventDecorationsAlt: "Dekoracje balonowe na imprezy i wydarzenia"
     eventDecorations: "Dekoracje na wydarzenia"
     eventDecorationsDescription: "Tworzymy dekoracje balonowe na różnego rodzaju wydarzenia, imprezy firmowe, urodziny, otwarcia lokali oraz inne okazje wymagające wyjątkowej oprawy."
+    intro: "Przygotowujemy dekoracje balonowe na eventy, imprezy firmowe, urodziny, otwarcia oraz inne wydarzenia wymagające wyjątkowej oprawy."
 
 about:
     getToKnowUs: "Poznaj nas"
@@ -37,6 +47,14 @@ about:
     description2: "Tworzymy dekoracje na urodziny, baby shower, rodzinne spotkania, wesela, przyjęcia dla dzieci oraz imprezy firmowe. Od efektownych girland i ścianek balonowych po kolorowe zwierzątka i figury z balonów – każdą realizację dopasowujemy do okazji, miejsca oraz wizji naszego klienta."
     description3: "Działamy w Chicago i okolicznych miejscowościach, w tym w Naperville i Wheaton. Zależy nam, aby cały proces był prosty i przyjemny – od pierwszego kontaktu aż po przygotowanie dekoracji na Twoje wydarzenie."
     learnMore: "Dowiedz się więcej"
+
+    image_alt: "Dekoracje balonowe na przyjęcie"
+    quality.title: "Najwyższa jakość"
+    quality.description: "Profesjonalne, trwałe balony"
+    design.title: "Twój pomysł"
+    design.description: "Projekt dopasowany do okazji   "
+    service.title: "Pełna opieka"
+    service.description: "Dowóz, montaż i demontaż"
 
 serviceArea:
     whereWeWork: "Gdzie działamy"
@@ -61,4 +79,83 @@ footer:
     allRightsReserved: "Wszelkie prawa zastrzeżone"
 
 main:
-contact: "Kontakt"
+    contact: "Kontakt"
+
+gallery:
+    meta:
+        title: "Galeria Dekoracji Balonowych | Ścianki i Girlandy Balonowe w Chicago - Ania Balloon"
+        description: "Odkryj naszą galerię wyjątkowych dekoracji balonowych w Chicago i okolicach. Tworzymy ścianki balonowe na urodziny, girlandy, figury z balonów oraz efektowne dekoracje na eventy firmowe."
+    backdrop:
+        subtitle: "Nasze Ścianki Balonowe"
+        title: "Galeria Ścianek i Tła Balonowych"
+        lead: "Odkryj nasze wyjątkowe ścianki i tła balonowe stworzone z myślą o najważniejszych chwilach. Tworzymy efektowne aranżacje do zdjęć na urodziny, wesela, baby shower, jubileusze, imprezy firmowe i inne wyjątkowe okazje w Chicago i okolicach."
+        aria_label: "Galeria ścianek i teł balonowych"
+        seo_description1: "Szukasz efektownego tła do zdjęć na swoje wydarzenie? W Ania Balloon tworzymy wyjątkowe ścianki balonowe, które przyciągają uwagę i nadają uroczystości niepowtarzalny charakter. Nasze dekoracje doskonale sprawdzają się podczas urodzin, wesel, baby shower, chrztów, jubileuszy oraz eventów firmowych w Chicago i okolicach."
+        seo_description2: "Łączymy balony w różnych kolorach, rozmiarach i kształtach, tworząc kompozycje dopasowane do charakteru wydarzenia. Od delikatnych pastelowych aranżacji po efektowne ścianki z balonów i cekinów — dbamy o każdy szczegół, aby stworzyć piękne tło do wyjątkowych zdjęć."
+        seo_title: "Profesjonalne Dekoracje Balonowe i Ścianki do Zdjęć w Chicago"
+    animals:
+        subtitle: "Balonowe Zwierzątka"
+        title: "Galeria Balonowych Zwierzątek i Figur"
+        lead: "Zobacz wyjątkowe zwierzątka i figury stworzone z balonów, które zachwycają dzieci i dorosłych. Tworzymy kolorowe i pełne charakteru kompozycje na urodziny, przyjęcia dla dzieci, baby shower, festyny i wyjątkowe wydarzenia w Chicago i okolicach."
+        aria_label: "Galeria balonowych zwierzątek i figur"
+        seo_description1: "Balonowe zwierzątka to wyjątkowa atrakcja, która potrafi wywołać uśmiech na każdej imprezie. W Ania Balloon tworzymy kolorowe figury i rzeźby z balonów dopasowane do tematyki wydarzenia, wieku dzieci oraz wybranej kolorystyki."
+        seo_description2: "Od klasycznych zwierzątek po bardziej rozbudowane figury i bajkowe postacie — każda kompozycja jest wykonywana z dbałością o szczegóły. To doskonały sposób na urozmaicenie urodzin, przyjęć dziecięcych, festynów oraz innych wydarzeń, podczas których liczy się dobra zabawa i wyjątkowa oprawa."
+        seo_title: "Balonowe Zwierzątka i Figury na Imprezy w Chicago"
+    events:
+        subtitle: "Nasze Dekoracje na Eventy"
+        title: "Galeria Dekoracji Eventowych i Balonowych"
+        lead: "Odkryj nasze wyjątkowe aranżacje balonowe tworzone z pasją na specjalne okazje w Chicago i okolicach. Tworzymy stylowe ścianki balonowe do zdjęć, eleganckie girlandy balonowe oraz efektowne dekoracje na urodziny, wesela, imprezy firmowe i inne wyjątkowe wydarzenia."
+        aria_label: "Galeria dekoracji eventowych i balonowych"
+        seo_description1: "Szukasz wyjątkowych dekoracji na swoje wydarzenie? W Ania Balloon specjalizujemy się w tworzeniu profesjonalnych dekoracji balonowych na różnego rodzaju uroczystości. Nasze dekoracje stanowią wyjątkową oprawę urodzin, wesel, chrztów, jubileuszy oraz eventów firmowych na terenie Chicago i okolic."
+        seo_description2: "Używamy wyłącznie wysokiej jakości biodegradowalnych balonów organicznych w trwałych i głębokich kolorach. Niezależnie od tego, czy potrzebujesz delikatnej pastelowej girlandy, klasycznej organicznej konstrukcji balonowej, czy rozbudowanej dekoracji łączącej balony z innymi elementami — zrealizujemy Twoją wizję z dbałością o każdy detal."
+        seo_title: "Profesjonalne Dekoracje Balonowe na Eventy w Chicago"
+
+contact:
+    meta:
+        title: "Kontakt | Zamów Ścianki i Dekoracje Balonowe w Chicago"
+        description: "Zadzwoń do nas i zamów bajkowe dekoracje balonowe na komunię, chrzest, urodziny i baby shower! Obsługujemy Chicago, Wheaton, hrabstwo DuPage i okolice."
+
+    hero:
+        badge: "🎈 Zadzwoń i Zarezerwuj Termin!"
+        title: "Stwórzmy Razem Magiczny Świat Balonów!"
+        description: "Tworzymy kolorowe, cukierkowe i niezapomniane oprawy balonowe na urodziny, chrzest, komunię, baby shower oraz eventy w całej metropolii Chicago!"
+
+    call:
+        image_alt: "Kolorowe dekoracje i ścianki balonowe w Chicago"
+        title: "Zadzwoń do Nas Bezpośrednio!"
+        lead: "Najszybszy sposób na wycenę i rezerwację terminu – omówmy szczegóły Twojego wydarzenia przez telefon lub SMS."
+        button_label: "Kliknij i zadzwoń teraz"
+        sms_button: "💬 Wyślij SMS z zapytaniem"
+        working_hours: "✨ Jesteśmy dostępni telefonicznie: Pon - Sob (8:00 - 20:00)"
+
+    service_area:
+        title: "📍 Gdzie Dojeżdżamy?"
+        description: "Dostarczamy i montujemy ścianki balonowe oraz girlandy na terenie <strong>całego Chicago i okolicznych miasteczek</strong>!"
+        list_title: "Obsługiwane Rejony & Hrabstwa:"
+        chicago: "<strong>Chicago</strong> (wszystkie dzielnice)"
+        wheaton: "<strong>Wheaton</strong> (DuPage County)"
+        naperville_aurora: "Naperville & Aurora"
+        schaumburg_elk_grove: "Schaumburg & Elk Grove Village"
+        oak_brook_hinsdale: "Oak Brook & Hinsdale"
+        des_plaines_park_ridge: "Des Plaines & Park Ridge"
+        dupage: "Hrabstwo DuPage (DuPage County)"
+        cook: "Hrabstwo Cook (Cook County)"
+        notice: "🍬 <strong>Nie widzisz swojego miasta?</strong> Bez obaw! Dojeżdżamy też do sąsiednich miasteczek. Zadzwoń i zapytaj o dojazd!"
+
+    occasions:
+        title: "🎈 Dekoracje na Każdą Okazję"
+        description: "Specjalizujemy się w bajkowych kompozycjach dopasowanych do Twojej uroczystości:"
+        birthdays: "🎂 <strong>Urodziny i Jubileusze</strong> (Kolorowe girlandy organiczne, cyfry)"
+        christening: "🕊️ <strong>Chrzest Święty & Komunia</strong> (Pastelowe, eleganckie ścianki)"
+        baby_shower: "👶 <strong>Baby Shower & Gender Reveal</strong> (Cukierkowe dekoracje)"
+        backdrops: "✨ <strong>Foto-ścianki i Łuki</strong> (Idealne tło do pamiątkowych zdjęć)"
+
+    faq:
+        title: "Często Zadawane Pytania (FAQ)"
+        advance.title: "Z jakim wyprzedzeniem najlepiej zadzwonić?"
+        advance.description: "Zalecamy kontakt telefoniczny z minimum 2-3 tygodniowym wyprzedzeniem, szczególnie na sezony komunijne i letnie przyjęcia w okolicach Chicago i Wheaton."
+        setup.title: "Czy montujecie dekoracje na miejscu?"
+        setup.description: "Tak! Przyjeżdżamy na miejsce wydarzenia, montujemy pełną kompozycję balonową, a po imprezie możemy zająć się jej demontażem."
+
+    schema:
+        description: "Bajkowe dekoracje i ścianki balonowe na chrzest, komunię, urodziny i baby shower w Chicago, Wheaton i metropolii Chicagoland. Zamówienia telefoniczne."

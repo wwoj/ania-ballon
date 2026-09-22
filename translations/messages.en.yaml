@@ -1,3 +1,8 @@
+home:
+    meta:
+        title: "Beautiful Balloon Decorations in Chicago | Ania Balloon"
+        description: "We create beautiful balloon decorations in Chicago and the surrounding areas — balloon backdrops, garlands, arches, sculptures, and custom decor for birthdays, weddings, baby showers, and events."
+
 nav:
     home: "Home"
     gallery: "Gallery"
@@ -13,6 +18,11 @@ hero:
     title: "Balloon Decorations <br/> for Every Occasion<br/> in Chicago and surrounding areas"
     subtitle: "We create unique balloon decorations for birthdays, parties, baby showers, weddings, and special events in Chicago and the surrounding areas."
     button_text: "Book Now"
+    eyebrow: "Magic in Every Detail"
+    gallery_button: "View Gallery"
+    trust_decorations: "Characterful Decorations"
+    trust_locations: "Chicago & Surrounding Areas"
+
 services:
     whatWeDo: "What We Do"
     title: "Our Services"
@@ -27,12 +37,22 @@ services:
     eventDecorationsAlt: "Balloon decoration for events and parties"
     eventDecorations: "Event Decorations"
     eventDecorationsDescription: "We create balloon decorations for events, corporate parties, birthdays, grand openings, and other occasions requiring a special setting."
+    intro: "We create balloon decorations for events, corporate parties, birthdays, grand openings, and other occasions that call for a unique and memorable setting."
 about:
     getToKnowUs: "Get to know us"
     title: "Decorations created with love and passion"
     description1: "Ania Balloons is more than just balloon decorations. It is a way to create a unique atmosphere and give every event an individual touch."
     description2: "We create decorations for birthdays, baby showers, family gatherings, weddings, children's parties, and corporate events. From striking garlands and balloon backdrops to colorful balloon animals and figures, we tailor every design to the occasion, the venue, and our client's vision."
     description3: "We operate in Chicago and the surrounding suburbs, including Naperville and Wheaton. Our goal is to make the entire process simple and enjoyable—from the initial contact to the final setup of the decorations for your event."
+
+    image_alt: "Balloon Decorations for a Party"
+    quality.title: "Highest Quality"
+    quality.description: "Professional, Long-Lasting Balloons"
+    design.title: "Your Idea"
+    design.description: "A Design Tailored to the Occasion"
+    service.title: "Full-Service Support"
+    service.description: "Delivery, Setup & Removal"
+
 learnMore: "Learn More"
 serviceArea:
     whereWeWork: "Where We Work"
@@ -56,3 +76,75 @@ footer:
     allRightsReserved: "All rights reserved"
 main:
     contact: "Contact"
+gallery:
+    meta:
+        title: "Balloon Decor Gallery | Backdrops & Garlands Chicago - Ania Balloon"
+        description: "Explore our gallery of unique balloon decorations in Chicago and the surrounding areas. We create balloon backdrops for birthdays, garlands, balloon figures, and stunning decor for corporate events."
+    backdrop:
+        subtitle: "Our Balloon Backdrops"
+        title: "Balloon Backdrops & Photo Walls Gallery"
+        lead: "Explore our unique balloon backdrops and photo walls created for life’s most special moments. We design eye-catching arrangements for birthdays, weddings, baby showers, anniversaries, corporate events, and other memorable occasions in Chicago and the surrounding areas."
+        aria_label: "Balloon backdrops and photo walls gallery"
+        seo_description1: "Looking for a stunning photo backdrop for your event? At Ania Balloon, we create eye-catching balloon backdrops that make every celebration feel truly special. Our decorations are perfect for birthdays, weddings, baby showers, christenings, anniversaries, and corporate events throughout Chicago and the surrounding areas."
+        seo_description2: "We combine balloons in different colors, sizes, and shapes to create designs tailored to each occasion. From delicate pastel arrangements to impressive balloon and sequin backdrops, we pay attention to every detail to create a beautiful setting for unforgettable photos."
+        seo_title: "Professional Balloon Decor & Photo Backdrops in Chicago"
+    animal:
+        subtitle: "Balloon Animals"
+        title: "Balloon Animals & Sculptures Gallery"
+        lead: "Discover our unique balloon animals and sculptures that delight both children and adults. We create colorful, playful designs for birthdays, children’s parties, baby showers, festivals, and special events in Chicago and the surrounding areas."
+        aria_label: "Balloon animals and sculptures gallery"
+        seo_description1: "Balloon animals are a fun and memorable addition to any celebration. At Ania Balloon, we create colorful balloon figures and sculptures tailored to your event theme, the children’s ages, and your chosen color palette."
+        seo_description2: "From classic balloon animals to more elaborate figures and playful characters, every creation is made with attention to detail. They are a wonderful way to add fun and excitement to birthdays, children’s parties, festivals, and other events where memorable entertainment and unique decorations matter."
+        seo_title: "Balloon Animals & Sculptures for Events in Chicago"
+    event:
+        subtitle: "Our Event & Balloon Decor"
+        title: "Event & Balloon Decorations Gallery"
+        lead: "Explore our unique balloon arrangements created with passion for special occasions in Chicago and the surrounding areas. We create stylish balloon backdrops, elegant balloon garlands, and eye-catching decorations for birthdays, weddings, corporate events, and other memorable celebrations."
+        aria_label: "Event and balloon decoration gallery"
+        seo_description1: "Looking for stunning decorations for your event? At Ania Balloon, we specialize in creating professional balloon decor for all kinds of celebrations. Our decorations add a unique touch to birthdays, weddings, christenings, anniversaries, and corporate events throughout Chicago and the surrounding areas."
+        seo_description2: "We use only high-quality biodegradable organic balloons in rich, long-lasting colors. Whether you need a delicate pastel garland, a classic organic balloon arch, or an elaborate decoration combining balloons with other elements, we bring your vision to life with attention to every detail."
+        seo_title: "Professional Balloon Decor for Events in Chicago"
+
+contact:
+    meta:
+        title: "Contact | Order Balloon Backdrops and Decorations in Chicago"
+        description: "Call us to order beautiful balloon decorations for communions, christenings, birthdays, and baby showers. We serve Chicago, Wheaton, DuPage County, and the surrounding areas."
+    hero:
+        badge: "🎈 Call and Book Your Date!"
+        title: "Let's Create a Magical Balloon World Together!"
+        description: "We create colorful, playful, and unforgettable balloon decor for birthdays, christenings, communions, baby showers, and events throughout the Chicago metropolitan area!"
+    call:
+        image_alt: "Colorful balloon decorations and backdrops in Chicago"
+        title: "Call Us Directly!"
+        lead: "The fastest way to get a quote and reserve your date is to discuss the details of your event by phone or text."
+        button_label: "Click to call now"
+        sms_button: "💬 Send us a text message"
+        working_hours: "✨ We are available by phone: Mon - Sat (8:00 AM - 8:00 PM)"
+    service_area:
+        title: "📍 Where Do We Travel?"
+        description: "We deliver and install balloon backdrops and garlands throughout <strong>Chicago and the surrounding towns</strong>!"
+        list_title: "Areas and Counties We Serve:"
+        chicago: "<strong>Chicago</strong> (all neighborhoods)"
+        wheaton: "<strong>Wheaton</strong> (DuPage County)"
+        naperville_aurora: "Naperville & Aurora"
+        schaumburg_elk_grove: "Schaumburg & Elk Grove Village"
+        oak_brook_hinsdale: "Oak Brook & Hinsdale"
+        des_plaines_park_ridge: "Des Plaines & Park Ridge"
+        dupage: "DuPage County"
+        cook: "Cook County"
+        notice: "🍬 <strong>Don't see your city?</strong> No problem! We also travel to neighboring towns. Call us to ask about your area!"
+    occasions:
+        title: "🎈 Decorations for Every Occasion"
+        description: "We specialize in whimsical designs tailored to your celebration:"
+        birthdays: "🎂 <strong>Birthdays and Anniversaries</strong> (Colorful organic garlands and numbers)"
+        christening: "🕊️ <strong>Christenings & Communions</strong> (Pastel, elegant backdrops)"
+        baby_shower: "👶 <strong>Baby Showers & Gender Reveals</strong> (Playful balloon decor)"
+        backdrops: "✨ <strong>Photo Backdrops and Arches</strong> (The perfect setting for memorable photos)"
+    faq:
+        title: "Frequently Asked Questions (FAQ)"
+        advance.title: "How far in advance should I call?"
+        advance.description: "We recommend contacting us at least 2-3 weeks in advance, especially during communion season and the summer event season around Chicago and Wheaton."
+        setup.title: "Do you install the decorations on site?"
+        setup.description: "Yes! We come to your venue, install the complete balloon arrangement, and can also take care of removing it after the event."
+    schema:
+        description: "Whimsical balloon decorations and backdrops for christenings, communions, birthdays, and baby showers in Chicago, Wheaton, and the Chicagoland area. Phone orders available."

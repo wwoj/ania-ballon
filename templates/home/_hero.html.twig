@@ -8,7 +8,7 @@
 
             <span class="hero-eyebrow">
                 <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
-                Magia w każdym detalu
+                {{ 'hero.eyebrow'|trans }}
             </span>
 
             <h1>
@@ -26,13 +26,13 @@
                 </a>
                 <a href="{{ path('gallery') }}" class="hero-button hero-button--secondary">
                     <i class="fa-solid fa-images" aria-hidden="true"></i>
-                    Zobacz galerię
+                    {{ 'hero.gallery_button'|trans }}
                 </a>
             </div>
 
             <div class="hero-trust">
-                <span><i class="fa-solid fa-star" aria-hidden="true"></i> Dekoracje z charakterem</span>
-                <span><i class="fa-solid fa-heart" aria-hidden="true"></i> Chicago i okolice</span>
+                <span><i class="fa-solid fa-star" aria-hidden="true"></i>{{ "hero.trust_decorations"|trans }}</span>
+                <span><i class="fa-solid fa-heart" aria-hidden="true"></i> {{ "hero.trust_locations"|trans }}</span>
             </div>
 
         </div>

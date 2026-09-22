@@ -4,7 +4,7 @@
 
         <img
             src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=85"
-            alt="Dekoracje balonowe na przyjęcie"
+            alt="{{ "about.image_alt"|trans }}"
             loading="lazy"
         >
 
@@ -41,15 +41,15 @@
         <div class="about-highlights">
             <div class="about-highlight">
                 <span class="about-highlight__icon"><i class="fa-solid fa-gem" aria-hidden="true"></i></span>
-                <span><strong>Najwyższa jakość</strong><small>Profesjonalne, trwałe balony</small></span>
+                <span><strong>{{ "about.quality.title"|trans }}</strong><small>{{ "about.quality.description"|trans }}</small></span>
             </div>
             <div class="about-highlight">
                 <span class="about-highlight__icon"><i class="fa-solid fa-palette" aria-hidden="true"></i></span>
-                <span><strong>Twój pomysł</strong><small>Projekt dopasowany do okazji</small></span>
+                <span><strong>{{ "about.design.title"|trans }}</strong><small>{{ "about.design.description"|trans }}</small></span>
             </div>
             <div class="about-highlight">
                 <span class="about-highlight__icon"><i class="fa-solid fa-truck-fast" aria-hidden="true"></i></span>
-                <span><strong>Pełna opieka</strong><small>Dowóz, montaż i demontaż</small></span>
+                <span><strong>{{ "about.service.title"|trans }}</strong><small>{{ "about.service.description"|trans }}</small></span>
             </div>
         </div>
 

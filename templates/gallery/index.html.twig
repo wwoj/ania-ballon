@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Galeria Dekoracji Balonowych | Ścianki i Girlandy Chicago - Ania Balloon{% endblock %}
+{% block title %}{{ "gallery.meta.title"|trans}}{% endblock %}
 
 {% block meta_description %}
-Zobacz naszą galerię wyjątkowych dekoracji balonowych w Chicago i okolicach. Projektujemy ścianki balonowe na urodziny, girlandy, figury oraz oprawy balowe na wydarzenia firmowe.
+    {{ "gallery.meta.description"|trans}}
 {% endblock %}
 
 {% block javascripts %}
@@ -323,12 +323,12 @@ Zobacz naszą galerię wyjątkowych dekoracji balonowych w Chicago i okolicach. 
 <div class="example-wrapper">
     <section class="gallery-hero">
         <div class="container">
-            <span class="gallery-hero__subtitle">Nasze Realizacje {{ title|trans }}</span>
-            <h1 class="gallery-hero__title">Galeria Dekoracji i Ścianek Balonowych</h1>
+            <span class="gallery-hero__subtitle">
+            {{ ('gallery.' ~ title ~ '.subtitle')|trans|raw }}
+            </span>
+            <h1 class="gallery-hero__title">{{ ('gallery.' ~ title ~ '.title')|trans|raw }}</h1>
             <p class="gallery-hero__lead">
-                Odkryj nasze unikalne aranżacje balonowe stworzone z pasją na wyjątkowe okazje w Chicago i okolicach. 
-                Tworzymy stylowe <strong>ścianki do zdjęć</strong>, eleganckie <strong>girlandy balonowe</strong> oraz bajkowe postacie z balonów na urodziny, wesela i imprezy firmowe.
-            </p>
+                {{ ('gallery.' ~ title ~ '.lead')|trans|raw }}
         </div>
     </section>
 
@@ -347,13 +347,16 @@ Zobacz naszą galerię wyjątkowych dekoracji balonowych w Chicago i okolicach. 
 
     <section class="gallery-seo-text">
         <div class="container">
-            <h2>Professional Balloon Decor & Photo Backdrops in Chicago</h2>
+
+            <h2>
+                {{ ('gallery.' ~ title ~ '.seo_title')|trans|raw }}
+            </h2>
             <div class="gallery-seo-text__content">
                 <p>
-                    Szukasz niesamowitych dekoracji na swoje wydarzenie? W <strong>Ania Balloon</strong> specjalizujemy się w projektowaniu profesjonalnych opraw balonowych na każdą okazję. Nasze <em>ścianki balonowe do zdjęć</em> stanowią doskonałe tło do pamiątkowych fotografii na urodzinach, weselach, chrztach, jubileuszach oraz eventach firmowych na terenie Chicago i okolic.
+                    {{ ('gallery.' ~ title ~ '.seo_description1')|trans|raw }}
                 </p>
                 <p>
-                    Używamy wyłącznie najwyższej jakości biodegradowalnych balonów organicznych o trwałych i głębokich kolorach. Niezależnie od tego, czy potrzebujesz delikatnej girlandy pastelowej, klasycznej organicznej łukowej konstrukcji, czy rozbudowanej ścianki cekinowej połączonej z balonami – zrealizujemy Twoją wizję z dbałością o każdy detal.
+                    {{ ('gallery.' ~ title ~ '.seo_description2')|trans|raw }}
                 </p>
             </div>
         </div>
