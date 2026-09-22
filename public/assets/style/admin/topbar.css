@@ -48,6 +48,10 @@
     transition: background 0.2s;
 }
 
+.admin-topbar__btn--outline i {
+    margin-right: 6px;
+}
+
 .admin-topbar__btn--outline:hover {
     background: rgba(255, 255, 255, 0.1);
 }
@@ -141,4 +145,33 @@
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--color-text-light);
+}
+
+@media (max-width: 700px) {
+    .admin-topbar {
+        padding: 0 16px;
+    }
+
+    .admin-topbar__left,
+    .admin-topbar__right {
+        gap: 10px;
+    }
+
+    .admin-topbar__title {
+        font-size: 0.95rem;
+    }
+
+    .admin-topbar__btn--outline {
+        padding: 8px 10px;
+    }
+
+    .admin-topbar__btn--outline span,
+    .admin-topbar__username {
+        display: none;
+    }
+
+    .admin-topbar__user {
+        padding-left: 0;
+        border-left: 0;
+    }
 }

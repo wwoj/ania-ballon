@@ -1,4 +1,7 @@
 let selectedFiles = [];
+let isUploading = false;
+
+const UPLOAD_BATCH_SIZE = 10;
 
 $(document).ready(function () {
     $(document).on("change", ".photo-uploader__file-input", function () {
@@ -9,36 +12,52 @@ $(document).ready(function () {
     });
 
     $(document).on("click", "#submitUpload", async function () {
-        const formData = new FormData();
-        selectedFiles.forEach((file) => {
-            formData.append("images[]", file);
-        });
-        formData.append("galleryType", GALLERY_TYPE);
+        if (isUploading || selectedFiles.length === 0) {
+            return;
+        }
+
+        const $uploadButton = $(this);
+        const filesToUpload = [...selectedFiles];
+        isUploading = true;
+        $uploadButton.prop("disabled", true).text("Uploading...");
 
         try {
-            const response = await fetch("/admin/upload", {
-                method: "POST",
-                body: formData,
-            });
+            for (
+                let start = 0;
+                start < filesToUpload.length;
+                start += UPLOAD_BATCH_SIZE
+            ) {
+                const batch = filesToUpload.slice(
+                    start,
+                    start + UPLOAD_BATCH_SIZE,
+                );
+                const formData = new FormData();
 
-            const data = await response.json();
+                batch.forEach((file) => formData.append("images[]", file));
+                formData.append("galleryType", GALLERY_TYPE);
 
-            if (!response.ok) {
-                throw new Error("Upload failed");
+                const response = await fetch("/admin/upload", {
+                    method: "POST",
+                    body: formData,
+                });
+                const data = await response.json();
+
+                if (!response.ok || !data.success) {
+                    throw new Error(data.message || "Upload failed");
+                }
+
+                data.images.forEach(appendUploadedImage);
+                selectedFiles.splice(0, batch.length);
+                renderSelectedFiles();
             }
 
-            //const data = await response.json();
-
-            console.log(data);
             $(".selected-files__list").empty();
-            data.images.forEach(appendUploadedImage);
-
-            selectedFiles = [];
         } catch (error) {
             console.error(error);
+            window.alert(error.message || "Upload failed");
         } finally {
-            // clear input
             isUploading = false;
+            $uploadButton.prop("disabled", false).text("Upload");
         }
     });
 

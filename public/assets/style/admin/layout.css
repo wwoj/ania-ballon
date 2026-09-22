@@ -23,4 +23,15 @@ body {
 .admin-layout__content {
     padding: 30px;
     flex: 1;
+    min-width: 0;
+}
+
+.admin-sidebar-overlay {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .admin-layout__content {
+        padding: 20px 14px 28px;
+    }
 }

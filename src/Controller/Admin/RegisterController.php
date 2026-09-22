@@ -42,6 +42,7 @@ final class RegisterController extends AbstractController
         return $this->json([
             'success' => true,
             'hash_created' => $hashedPassword !== '',
+            'redirect' => $this->generateUrl('admin_login'),
         ]);
     }
 }

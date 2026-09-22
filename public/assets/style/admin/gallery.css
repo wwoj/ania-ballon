@@ -153,6 +153,69 @@
         transform 0.2s ease,
         box-shadow 0.2s ease;
 }
+
+.gallery.example-wrapper {
+    width: min(100%, 960px);
+    margin: 0 auto;
+}
+
+.gallery.example-wrapper h1 {
+    margin-top: 0;
+    overflow-wrap: anywhere;
+}
+
+.photo-name,
+.photo-id {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+    .photo-uploader__dropzone {
+        padding: 28px 16px;
+        border-radius: 12px;
+    }
+
+    .photo-uploader__title {
+        font-size: 1.05rem;
+    }
+
+    .selected-files {
+        padding: 14px;
+    }
+
+    .gallery__save-order-btn,
+    .selected-files__upload-btn {
+        width: 100%;
+        padding: 11px 16px;
+    }
+
+    #photos .photo {
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    #photos .photo img {
+        width: 72px;
+        height: 58px;
+        flex: 0 0 72px;
+    }
+
+    #photos .photo > div:not(.photo__actions) {
+        min-width: 0;
+        flex: 1;
+    }
+
+    #photos .photo__actions {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .drag-handle {
+        padding-top: 12px;
+        font-size: 18px;
+    }
+}
 .selected-files__upload-btn:hover,
 .gallery__save-order-btn:hover {
     cursor: pointer;

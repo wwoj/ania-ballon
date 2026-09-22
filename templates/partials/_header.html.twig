@@ -2,56 +2,243 @@
 {% set current_params = app.request.attributes.get('_route_params') %}
 
 
+{# =========================================
+   DESKTOP / TOP HEADER
+========================================= #}
+
 <header class="site-header">
 
     <div class="header-inner">
 
-        <a href="#" class="logo" aria-label="Ania Balloons - strona główna">
+
+        {# LOGO #}
+
+        <a
+            href="{{ path('home') }}"
+            class="logo"
+            aria-label="Ania Balloons - strona główna"
+        >
             Ania Balloon
         </a>
 
 
-        <nav class="main-nav" aria-label="Główna nawigacja">
+        {# DESKTOP NAVIGATION #}
 
-            <a href="{{ path('home') }}" class="nav-link {{ current_route == 'home' ? 'active' : '' }}">
+        <nav
+            class="main-nav"
+            aria-label="Główna nawigacja"
+        >
+
+            <a
+                href="{{ path('home') }}"
+                class="nav-link {{ current_route == 'home' ? 'active' : '' }}"
+            >
                 {{ 'nav.home'|trans }}
             </a>
 
-            <a href="{{ path('app_backdrop') }}" class="nav-link {{ current_route == 'app_backdrop' ? 'active' : '' }}">
+
+            <a
+                href="{{ path('app_backdrop') }}"
+                class="nav-link {{ current_route == 'app_backdrop' ? 'active' : '' }}"
+            >
                 {{ 'nav.backdrop'|trans }}
             </a>
 
-            <a href="{{ path('app_animal') }}" class="nav-link {{ current_route == 'app_animal' ? 'active' : '' }}">
+
+            <a
+                href="{{ path('app_animal') }}"
+                class="nav-link {{ current_route == 'app_animal' ? 'active' : '' }}"
+            >
                 {{ 'nav.animal'|trans }}
             </a>
 
-            <a href="{{ path('app_event') }}" class="nav-link {{ current_route == 'app_event' ? 'active' : '' }}">
+
+            <a
+                href="{{ path('app_event') }}"
+                class="nav-link {{ current_route == 'app_event' ? 'active' : '' }}"
+            >
                 {{ 'nav.event'|trans }}
             </a>
 
-            <a href="{{ path('contact') }}" class="nav-link {{ current_route == 'contact' ? 'active' : '' }}">
+
+            <a
+                href="{{ path('contact') }}"
+                class="nav-link {{ current_route == 'contact' ? 'active' : '' }}"
+            >
                 {{ 'nav.contact'|trans }}
             </a>
 
         </nav>
 
 
+        {# LANGUAGE SWITCHER #}
+
         <div class="language-switcher">
-    {% if app.request.locale == 'en' %}
-        <span class="active">🇺🇸EN</span>|
-        <a href="{{ path(current_route, current_params|merge({'_locale': 'pl'})) }}"> 
-        🇵🇱
-        PL
-        </a>
-    {% else %}
-        <a href="{{ path(current_route, current_params|merge({'_locale': 'en'})) }}">🇺🇸EN</a>|
-        <span class="active">🇵🇱PL
-        </span>
-    {% endif %}
-</div>
-        
+
+            {% if app.request.locale == 'en' %}
+
+                <span class="active">
+                    🇺🇸 EN
+                </span>
+
+                <span class="language-divider">
+                    |
+                </span>
+
+                <a
+                    href="{{ path(
+                        current_route,
+                        current_params|merge({'_locale': 'pl'})
+                    ) }}"
+                >
+                    🇵🇱 PL
+                </a>
+
+            {% else %}
+
+                <a
+                    href="{{ path(
+                        current_route,
+                        current_params|merge({'_locale': 'en'})
+                    ) }}"
+                >
+                    🇺🇸 EN
+                </a>
+
+                <span class="language-divider">
+                    |
+                </span>
+
+                <span class="active">
+                    🇵🇱 PL
+                </span>
+
+            {% endif %}
+
+        </div>
 
     </div>
-    
 
 </header>
+
+
+
+{# =========================================
+   MOBILE BOTTOM NAVIGATION
+========================================= #}
+
+<nav
+    class="mobile-bottom-nav"
+    aria-label="Mobilna nawigacja"
+>
+
+
+    {# HOME #}
+
+    <a
+        href="{{ path('home') }}"
+        class="bottom-nav-item {{ current_route == 'home' ? 'active' : '' }}"
+    >
+
+        <span
+            class="bottom-nav-icon"
+            aria-hidden="true"
+        >
+            ⌂
+        </span>
+
+        <span class="bottom-nav-label">
+            {{ 'nav.home'|trans }}
+        </span>
+
+    </a>
+
+
+
+    {# BACKDROP #}
+
+    <a
+        href="{{ path('app_backdrop') }}"
+        class="bottom-nav-item {{ current_route == 'app_backdrop' ? 'active' : '' }}"
+    >
+
+        <span
+            class="bottom-nav-icon"
+            aria-hidden="true"
+        >
+            🎈
+        </span>
+
+        <span class="bottom-nav-label">
+            {{ 'nav.backdrop'|trans }}
+        </span>
+
+    </a>
+
+
+
+    {# ANIMAL #}
+
+    <a
+        href="{{ path('app_animal') }}"
+        class="bottom-nav-item {{ current_route == 'app_animal' ? 'active' : '' }}"
+    >
+
+        <span
+            class="bottom-nav-icon"
+            aria-hidden="true"
+        >
+            🐾
+        </span>
+
+        <span class="bottom-nav-label">
+            {{ 'nav.animal'|trans }}
+        </span>
+
+    </a>
+
+
+
+    {# EVENT #}
+
+    <a
+        href="{{ path('app_event') }}"
+        class="bottom-nav-item {{ current_route == 'app_event' ? 'active' : '' }}"
+    >
+
+        <span
+            class="bottom-nav-icon"
+            aria-hidden="true"
+        >
+            🎉
+        </span>
+
+        <span class="bottom-nav-label">
+            {{ 'nav.event'|trans }}
+        </span>
+
+    </a>
+
+
+
+    {# CONTACT #}
+
+    <a
+        href="{{ path('contact') }}"
+        class="bottom-nav-item {{ current_route == 'contact' ? 'active' : '' }}"
+    >
+
+        <span
+            class="bottom-nav-icon"
+            aria-hidden="true"
+        >
+            ✉
+        </span>
+
+        <span class="bottom-nav-label">
+            {{ 'nav.contact'|trans }}
+        </span>
+
+    </a>
+
+</nav>

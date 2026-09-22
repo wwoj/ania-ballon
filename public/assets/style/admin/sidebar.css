@@ -154,3 +154,52 @@
     opacity: 0;
     pointer-events: none;
 }
+
+@media (max-width: 992px) {
+    .admin-sidebar {
+        position: fixed;
+        inset: 0 auto 0 0;
+        z-index: 30;
+        width: min(var(--sidebar-width-expanded), 84vw);
+        flex-basis: min(var(--sidebar-width-expanded), 84vw);
+        transform: translateX(-100%);
+        box-shadow: 12px 0 30px rgba(0, 0, 0, 0.22);
+        transition: transform 0.25s ease;
+    }
+
+    .admin-layout.admin-layout--mobile-open .admin-sidebar {
+        transform: translateX(0);
+    }
+
+    .admin-layout.admin-layout--sidebar-collapsed .admin-sidebar {
+        width: min(var(--sidebar-width-expanded), 84vw);
+        flex-basis: min(var(--sidebar-width-expanded), 84vw);
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .admin-layout.admin-layout--sidebar-collapsed .admin-sidebar__text,
+    .admin-layout.admin-layout--sidebar-collapsed .admin-sidebar__header-text,
+    .admin-layout.admin-layout--sidebar-collapsed .admin-sidebar__logout-text,
+    .admin-layout.admin-layout--sidebar-collapsed .admin-sidebar__profile-info {
+        max-width: 200px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .admin-sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 20;
+        background: rgba(15, 18, 28, 0.62);
+        opacity: 0;
+        pointer-events: none;
+        display: block;
+        transition: opacity 0.25s ease;
+    }
+
+    .admin-layout.admin-layout--mobile-open .admin-sidebar-overlay {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}

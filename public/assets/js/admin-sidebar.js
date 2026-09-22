@@ -33,6 +33,10 @@
 
             if (isMobileView()) {
                 $adminLayout.toggleClass("admin-layout--mobile-open");
+                $toggleBtn.attr(
+                    "aria-expanded",
+                    $adminLayout.hasClass("admin-layout--mobile-open"),
+                );
             } else {
                 $adminLayout.toggleClass("admin-layout--sidebar-collapsed");
                 const isCollapsed = $adminLayout.hasClass(
@@ -55,13 +59,26 @@
             $overlay.on("click touchstart", function (e) {
                 e.preventDefault();
                 $adminLayout.removeClass("admin-layout--mobile-open");
+                $toggleBtn.attr("aria-expanded", "false");
             });
         }
+
+        $(document).on(
+            "click",
+            ".admin-sidebar__link, .admin-sidebar__logout",
+            function () {
+                if (isMobileView()) {
+                    $adminLayout.removeClass("admin-layout--mobile-open");
+                    $toggleBtn.attr("aria-expanded", "false");
+                }
+            },
+        );
 
         // Clean mobile state on viewport resize
         $(window).on("resize", function () {
             if (!isMobileView()) {
                 $adminLayout.removeClass("admin-layout--mobile-open");
+                $toggleBtn.attr("aria-expanded", "false");
             }
         });
     }

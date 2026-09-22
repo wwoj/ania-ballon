@@ -11,9 +11,8 @@ $(document).ready(function () {
             type: "POST",
             data: formData,
             success: function (response) {
-                // Handle success response
-                alert("Registration successful!");
-                window.location.href = "{{ path('admin_login') }}";
+                alert("User created.");
+                window.location.href = response.redirect;
             },
             error: function (xhr, status, error) {
                 // Handle error response

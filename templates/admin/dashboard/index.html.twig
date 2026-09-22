@@ -3,18 +3,133 @@
 {% block title %}Hello DashboardController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<!-- Fragment HTML -->
+<div class="gallery-info-container">
+    <!-- Powitanie / Nagłówek lokalizacji -->
+    <div class="info-banner">
+        <span class="info-badge">Strona Główna</span>
+        <h2>Witaj w panelu zarządzania galeriami! 👋</h2>
+        <p>Masz pełną kontrolę nad zawartością wizualną. Wybierz kategorię poniżej, aby zarządzać zdjęciami.</p>
+    </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <!-- Informacje / Wskazówki -->
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="info-icon icon-green">➕</div>
+            <div>
+                <h3>Dodawaj zdjęcia</h3>
+                <p>Wgrywaj pliki graficzne do wybranej kategorii.</p>
+            </div>
+        </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Users/wojciki/Desktop/Project/Symfony/ania-balloon/src/Controller/Admin/DashboardController.php</code></li>
-        <li>Your template at <code>/Users/wojciki/Desktop/Project/Symfony/ania-balloon/templates/admin/dashboard/index.html.twig</code></li>
-    </ul>
+        <div class="info-card">
+            <div class="info-icon icon-rose">🗑️</div>
+            <div>
+                <h3>Usuwaj niepotrzebne</h3>
+                <p>Szybko kasuj przestarzałe fotografie.</p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon icon-amber">🔄</div>
+            <div>
+                <h3>Zmieniaj kolejność</h3>
+                <p>Dopasuj sekwencję wyświetlania.</p>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!-- Uproszczone style CSS -->
+<style>
+    .gallery-info-container {
+        font-family: system-ui, -apple-system, sans-serif;
+        color: #1e293b;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.5rem;
+    }
+    .info-banner {
+        background: linear-gradient(135deg, #312e81, #4f46e5);
+        color: #fff;
+        padding: 2rem;
+        border-radius: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .info-badge {
+        background: rgba(255, 255, 255, 0.2);
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .info-banner h2 {
+        font-size: 1.5rem;
+        margin: 0.75rem 0 0.5rem 0;
+    }
+    .info-banner p {
+        color: #c7d2fe;
+        font-size: 0.95rem;
+        margin: 0;
+        line-height: 1.5;
+    }
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+    }
+    .info-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        padding: 1.25rem;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .info-icon {
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .icon-green { background: #ecfdf5; color: #059669; }
+    .icon-rose { background: #fff1f2; color: #e11d48; }
+    .icon-amber { background: #fffbeb; color: #d97706; }
+    .info-card h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0 0 0.25rem 0;
+        color: #0f172a;
+    }
+    .info-card p {
+        font-size: 0.875rem;
+        color: #64748b;
+        margin: 0;
+    }
+
+    @media (max-width: 700px) {
+        .gallery-info-container {
+            padding: 0;
+        }
+
+        .info-banner {
+            padding: 1.4rem;
+            border-radius: 12px;
+        }
+
+        .info-banner h2 {
+            font-size: 1.25rem;
+        }
+
+        .info-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
 {% endblock %}

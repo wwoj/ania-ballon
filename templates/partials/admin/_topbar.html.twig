@@ -1,6 +1,6 @@
 <header class="admin-topbar">
     <div class="admin-topbar__left">
-        <button type="button" class="admin-topbar__toggle" id="sidebarToggle" aria-label="Toggle Sidebar">
+        <button type="button" class="admin-topbar__toggle" id="sidebarToggle" aria-label="Toggle Sidebar" aria-expanded="false" aria-controls="adminSidebar">
             ☰
         </button>
         <span class="admin-topbar__title">Panel Zarządzania</span>
@@ -8,7 +8,8 @@
 
     <div class="admin-topbar__right">
         <a href="{{ path('home') }}" class="admin-topbar__btn admin-topbar__btn--outline">
-            🌐 Zobacz stronę
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            <span>Zobacz stronę</span>
         </a>
 
         {# Sekcja Użytkownika #}
