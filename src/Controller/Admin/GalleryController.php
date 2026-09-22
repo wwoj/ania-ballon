@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use App\Service\GalleryUploadService;
-
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use App\Enum\GalleryType;
 use App\Entity\PictureGallery;
 use App\Repository\PictureGalleryRepository;
@@ -16,6 +16,7 @@ use App\Repository\PictureGalleryRepository;
 final class GalleryController extends AbstractController
 {
     #[Route('/admin/backdrop', name: 'admin_backdrop')]
+    #[IsGranted('IS_AUTHENTICATED_REMEMBERED')]
     public function backdrop(
         PictureGalleryRepository $pictureGalleryRepository,
     ): Response {
@@ -31,6 +32,7 @@ final class GalleryController extends AbstractController
     }
 
     #[Route('/admin/animal', name: 'admin_animal')]
+    #[IsGranted('IS_AUTHENTICATED_REMEMBERED')]
     public function animals(
         PictureGalleryRepository $pictureGalleryRepository,
     ): Response {
@@ -45,6 +47,7 @@ final class GalleryController extends AbstractController
     }
 
     #[Route('/admin/decoration', name: 'admin_decoration')]
+    #[IsGranted('IS_AUTHENTICATED_REMEMBERED')]
     public function decorations(
         PictureGalleryRepository $pictureGalleryRepository,
     ): Response {
@@ -59,6 +62,7 @@ final class GalleryController extends AbstractController
     }
 
     #[Route('/admin/upload', name: 'admin_upload')]
+    #[IsGranted('IS_AUTHENTICATED_REMEMBERED')]
     public function upload(
         Request $request,
         GalleryUploadService $galleryUploadService,
@@ -101,6 +105,7 @@ final class GalleryController extends AbstractController
     }
 
     #[Route('/admin/reorder', name: 'admin_reorder')]
+    #[IsGranted('IS_AUTHENTICATED_REMEMBERED')]
     public function reorder(
         Request $request,
         GalleryUploadService $galleryUploadService,
@@ -117,6 +122,7 @@ final class GalleryController extends AbstractController
     }
 
     #[Route('/admin/delete/{id}', name: 'admin_delete')]
+    #[IsGranted('IS_AUTHENTICATED_REMEMBERED')]
     public function delete(
         PictureGallery $pictureGallery,
         GalleryUploadService $galleryUploadService,
